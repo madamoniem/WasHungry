@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "257256898341",
+    "project_id": "washungryapp",
+    "storage_bucket": "washungryapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:257256898341:android:d20c1f8ccd49caef30a4cc",
+        "android_client_info": {
+          "package_name": "com.example.washungrystable"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "257256898341-7p1i6ef0lh618d709u8ul0622h5i63co.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA2aKgZmqmubBiQBH5C5W849phLQeWCqgY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "257256898341-7p1i6ef0lh618d709u8ul0622h5i63co.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "257256898341-q3g1gpbu5h4e5jv2o56sliaeqs5170p5.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.untitled"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
