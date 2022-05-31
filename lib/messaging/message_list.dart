@@ -49,11 +49,15 @@ class MessageListState extends State<MessageList> {
   Widget build(BuildContext context) {
     DatabaseReference userStatus =
         FirebaseDatabase.instance.ref('users/${widget.dUid}/status');
-    userStatus.onValue.listen((DatabaseEvent event) async {
-      setState(() {
-        data = event.snapshot.value.toString();
-      });
-    });
+    userStatus.onValue.listen(
+      (DatabaseEvent event) async {
+        setState(
+          () {
+            data = event.snapshot.value.toString();
+          },
+        );
+      },
+    );
     return Scaffold(
       resizeToAvoidBottomInset: true,
       appBar: AppBar(

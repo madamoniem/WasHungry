@@ -63,25 +63,25 @@ class InputField extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextField(
       textInputAction: TextInputAction.next,
-      style: const TextStyle(color: Colors.white),
+      style: TextStyle(color: CustomColors.textColor),
       controller: controller,
-      cursorColor: Colors.white,
+      cursorColor: CustomColors.textColor,
       decoration: InputDecoration(
         contentPadding: const EdgeInsets.all(20),
         labelText: labelText,
-        labelStyle: GoogleFonts.poppins(color: Colors.white),
-        focusColor: Colors.white,
-        fillColor: Colors.white,
-        hoverColor: Colors.white,
+        labelStyle: GoogleFonts.poppins(color: CustomColors.textColor),
+        focusColor: CustomColors.textColor,
+        fillColor: CustomColors.textColor,
+        hoverColor: CustomColors.textColor,
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(10.0),
-          borderSide: const BorderSide(
+          borderSide: BorderSide(
             width: 3,
-            color: Colors.white,
+            color: CustomColors.textColor,
           ),
         ),
         enabledBorder: OutlineInputBorder(
-          borderSide: const BorderSide(width: 3, color: Colors.white),
+          borderSide: BorderSide(width: 3, color: CustomColors.textColor),
           borderRadius: BorderRadius.circular(15),
         ),
       ),

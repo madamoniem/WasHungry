@@ -2,24 +2,24 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_database/firebase_database.dart';
-import 'package:firebase_messaging/firebase_messaging.dart';
-import 'package:flutter/material.dart';
 import 'package:flutter_bounceable/flutter_bounceable.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:geocoding/geocoding.dart';
-import 'package:geolocator/geolocator.dart';
+import 'package:geocoding/geocoding.dart' as geocoding;
+import 'package:geolocator/geolocator.dart' as geolocator;
 import 'package:google_fonts/google_fonts.dart';
 import 'package:map_launcher/map_launcher.dart';
 import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:washungrystable/customwidgets.dart';
+import 'package:washungrystable/test.dart';
 import 'package:washungrystable/get_process/maps.dart';
 import 'package:washungrystable/load_nearby_donations.dart';
 import 'package:washungrystable/give_process/add_info.dart';
 import 'package:washungrystable/messaging/message_list.dart';
-import 'package:firebase_messaging/firebase_messaging.dart';
+import 'dart:async';
+import 'package:location/location.dart';
 
 class UserDashboard extends StatefulWidget {
   const UserDashboard({Key? key}) : super(key: key);
@@ -39,19 +39,16 @@ int rating = 0;
 String currentUID = "";
 double? longitude;
 double? latitude;
-Placemark? place;
+// geocoding.Placemark? place;
 String? fcmToken;
 bool isButtonEnabled = false;
 int selectedIndex = 0;
 String? docID;
+geocoding.Placemark? place;
 
 @override
 class _UserDashboardState extends State<UserDashboard>
     with WidgetsBindingObserver {
-  //Database reference to user's status. Used to update user's status when page is opened.
-
-  //Used by the bottomnavigationbar to specify current page user is on.
-  //Gets all online donations
   var onlineDonationsStream = FirebaseFirestore.instance
       .collection('donations')
       .where('uid', isEqualTo: FirebaseAuth.instance.currentUser!.uid)
@@ -67,66 +64,83 @@ class _UserDashboardState extends State<UserDashboard>
       .where('dUid', isEqualTo: FirebaseAuth.instance.currentUser!.uid)
       .where('status', isEqualTo: 'Completed')
       .snapshots();
-  //Gets all donations awaiting approval
+
   var awaitingApprovalDonationsStream = FirebaseFirestore.instance
       .collection('donations')
       .where('uid', isEqualTo: FirebaseAuth.instance.currentUser!.uid)
       .where('status', isEqualTo: 'AwaitingApproval')
       .snapshots();
 
-  //Gets all donations that are in progress
   var inProgressDonationsStream = FirebaseFirestore.instance
       .collection('donations')
       .where('uid', isEqualTo: FirebaseAuth.instance.currentUser!.uid)
       .where('status', isEqualTo: 'InProgress')
       .snapshots();
 
-  //Gets all donation requests from current users (online requests where user is requesting specific food item)
   var onlineReceiptsStream = FirebaseFirestore.instance
       .collection('donations')
       .where('dUid', isEqualTo: FirebaseAuth.instance.currentUser!.uid)
       .where('status', isEqualTo: 'Online')
       .snapshots();
 
-  //Gets all donation claims where the donee is awaiting approval from donor
   var awaitingApprovalReceiptsStream = FirebaseFirestore.instance
       .collection('donations')
       .where('dUid', isEqualTo: FirebaseAuth.instance.currentUser!.uid)
       .where('status', isEqualTo: 'AwaitingApproval')
       .snapshots();
 
-  //Gets all donations in progress where the donee is current user
   var inProgressReceiptsStream = FirebaseFirestore.instance
       .collection('donations')
       .where('dUid', isEqualTo: FirebaseAuth.instance.currentUser!.uid)
       .where('status', isEqualTo: 'InProgress')
       .snapshots();
-  @override
-
-  //Functions run when page is loaded
-  initState() {
-    //Get user information
-    getUserData();
-
-    //Add observer to detect screen opened state
-    WidgetsBinding.instance.addObserver(this);
-    initializefirebase();
-
-    //Get device token - used for notifications
-
-    //Get user's current location
-    getLocation();
-    super.initState();
+  DatabaseReference userStatus = FirebaseDatabase.instance.ref(
+      'users/${FirebaseAuth.instance.currentUser!.uid}/isCheckingLocation');
+  getLocation() async {
+    await locationTracker.enableBackgroundMode(enable: true);
+    locationTracker.onLocationChanged.listen(
+      (LocationData currentLocation) async {
+        List<geocoding.Placemark> placemarks =
+            await geocoding.placemarkFromCoordinates(
+          currentLocation.latitude!.toDouble(),
+          currentLocation.longitude!.toDouble(),
+        );
+        setState(() {
+          latitude = currentLocation.latitude;
+          longitude = currentLocation.longitude;
+          place = placemarks[0];
+          isButtonEnabled = true;
+        });
+        setState(() {});
+        userStatus.onValue.listen(
+          (DatabaseEvent event) async {
+            setState(() {
+              isCheckingLocation = event.snapshot.value.toString();
+            });
+            if (isCheckingLocation == "true") {
+              FirebaseDatabase.instance
+                  .ref("users/${FirebaseAuth.instance.currentUser!.uid}/")
+                  .update(
+                {
+                  'latitute':
+                      currentLocation.latitude!.toDouble().toStringAsFixed(4),
+                  'longitude':
+                      currentLocation.longitude!.toDouble().toStringAsFixed(4),
+                  'heading': currentLocation.heading,
+                  'headingAccuracy': currentLocation.accuracy,
+                },
+              );
+            } else {}
+          },
+        );
+      },
+    );
   }
 
-  //Dispose of observer when user leaves page - reduces lag of having to detect if user is online when on other screens
-  @override
-  dispose() {
-    WidgetsBinding.instance.removeObserver(this);
-    super.dispose();
+  setAccuacry() async {
+    await locationTracker.changeSettings(accuracy: LocationAccuracy.powerSave);
   }
 
-  //Updates what page user is on when user clicks on another bottom navigation bar item
   _onItemTapped(int index) {
     setState(
       () {
@@ -139,39 +153,28 @@ class _UserDashboardState extends State<UserDashboard>
     await Firebase.initializeApp();
   }
 
-  getLocation() async {
-    Future<Position> _getGeoLocationPosition() async {
-      bool serviceEnabled;
-      LocationPermission permission;
-      serviceEnabled = await Geolocator.isLocationServiceEnabled();
-      if (!serviceEnabled) {
-        await Geolocator.openLocationSettings();
-        return Future.error('Location services are disabled.');
+  requestPermissions() async {
+    bool _serviceEnabled;
+    PermissionStatus _permissionGranted;
+    LocationData _locationData;
+
+    _serviceEnabled = await locationTracker.serviceEnabled();
+    if (!_serviceEnabled) {
+      _serviceEnabled = await locationTracker.requestService();
+      if (!_serviceEnabled) {
+        return;
       }
-      permission = await Geolocator.checkPermission();
-      if (permission == LocationPermission.denied) {
-        permission = await Geolocator.requestPermission();
-        if (permission == LocationPermission.denied) {
-          return Future.error('Location permissions are denied');
-        }
-      }
-      if (permission == LocationPermission.deniedForever) {
-        // Permissions are denied forever, handle appropriately.
-        return Future.error(
-            'Location permissions are permanently denied, we cannot request permissions.');
-      }
-      return await Geolocator.getCurrentPosition(
-          desiredAccuracy: LocationAccuracy.bestForNavigation);
     }
 
-    Position position = await _getGeoLocationPosition();
-    latitude = position.latitude;
-    longitude = position.longitude;
-    List<Placemark> placemarks =
-        await placemarkFromCoordinates(position.latitude, position.longitude);
-    place = placemarks[0];
-    isButtonEnabled = true;
-    setState(() {});
+    _permissionGranted = await locationTracker.hasPermission();
+    if (_permissionGranted == PermissionStatus.denied) {
+      _permissionGranted = await locationTracker.requestPermission();
+      if (_permissionGranted != PermissionStatus.granted) {
+        return;
+      }
+    }
+
+    _locationData = await locationTracker.getLocation();
   }
 
   getUserData() {
@@ -196,8 +199,63 @@ class _UserDashboardState extends State<UserDashboard>
     });
   }
 
+  final Location locationTracker = Location();
+  String? isCheckingLocation;
+
+  @override
+  initState() {
+    initializefirebase();
+    setAccuacry();
+    requestPermissions();
+    getUserData();
+    getLocation();
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
+    locationTracker.onLocationChanged.listen(
+      (LocationData currentLocation) async {
+        List<geocoding.Placemark> placemarks =
+            await geocoding.placemarkFromCoordinates(
+          currentLocation.latitude!.toDouble(),
+          currentLocation.longitude!.toDouble(),
+        );
+        setState(() {
+          latitude = currentLocation.latitude;
+          longitude = currentLocation.longitude;
+          place = placemarks[0];
+          isButtonEnabled = true;
+        });
+        setState(() {});
+        userStatus.onValue.listen(
+          (DatabaseEvent event) async {
+            setState(
+              () {
+                isCheckingLocation = event.snapshot.value.toString();
+                if (isCheckingLocation == "true") {
+                  FirebaseDatabase.instance
+                      .ref("users/${FirebaseAuth.instance.currentUser!.uid}/")
+                      .update(
+                    {
+                      'latitute': currentLocation.latitude!
+                          .toDouble()
+                          .toStringAsFixed(4),
+                      'longitude': currentLocation.longitude!
+                          .toDouble()
+                          .toStringAsFixed(4),
+                      'heading': currentLocation.heading,
+                      'headingAccuracy': currentLocation.accuracy,
+                    },
+                  );
+                }
+              },
+            );
+          },
+        );
+      },
+    );
+
     final List _widgetOptions = [
       SafeArea(
         child: Padding(
@@ -235,15 +293,13 @@ class _UserDashboardState extends State<UserDashboard>
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Bounceable(
-                    onTap: isButtonEnabled
-                        ? () {
-                            Navigator.of(context).push(
-                              MaterialPageRoute(
-                                builder: (context) => AddInfo(),
-                              ),
-                            );
-                          }
-                        : null,
+                    onTap: () {
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (context) => AddInfo(),
+                        ),
+                      );
+                    },
                     child: Container(
                       width: MediaQuery.of(context).size.width / 2.45,
                       height: MediaQuery.of(context).size.width / 2.45,
@@ -284,15 +340,13 @@ class _UserDashboardState extends State<UserDashboard>
                     ),
                   ),
                   Bounceable(
-                    onTap: isButtonEnabled
-                        ? () {
-                            Navigator.of(context).push(
-                              MaterialPageRoute(
-                                builder: (context) => const NearbyDonations(),
-                              ),
-                            );
-                          }
-                        : null,
+                    onTap: () {
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (context) => const NearbyDonations(),
+                        ),
+                      );
+                    },
                     child: Container(
                       width: MediaQuery.of(context).size.width / 2.45,
                       height: MediaQuery.of(context).size.width / 2.45,
@@ -499,7 +553,7 @@ class _UserDashboardState extends State<UserDashboard>
                                                   height: 5,
                                                 ),
                                                 GestureDetector(
-                                                  child: AutoSizeText(
+                                                  child: Text(
                                                     "Message donee",
                                                     maxLines: 1,
                                                     style: GoogleFonts.poppins(
@@ -555,18 +609,21 @@ class _UserDashboardState extends State<UserDashboard>
                                                                             Widget>[
                                                                           for (var map
                                                                               in availableMaps)
-                                                                            ListTile(
-                                                                              onTap: () => map.showDirections(
-                                                                                destination: Coords(
-                                                                                  data["dLatitude"],
-                                                                                  data["dLongitude"],
+                                                                            GestureDetector(
+                                                                              onTap: () {},
+                                                                              child: ListTile(
+                                                                                onTap: () => map.showDirections(
+                                                                                  destination: Coords(
+                                                                                    data["dLatitude"],
+                                                                                    data["dLongitude"],
+                                                                                  ),
                                                                                 ),
-                                                                              ),
-                                                                              title: Text(map.mapName),
-                                                                              leading: SvgPicture.asset(
-                                                                                map.icon,
-                                                                                height: 30.0,
-                                                                                width: 30.0,
+                                                                                title: Text(map.mapName),
+                                                                                leading: SvgPicture.asset(
+                                                                                  map.icon,
+                                                                                  height: 30.0,
+                                                                                  width: 30.0,
+                                                                                ),
                                                                               ),
                                                                             ),
                                                                         ],
@@ -590,12 +647,9 @@ class _UserDashboardState extends State<UserDashboard>
                                                         ),
                                                       )
                                                     : Container(),
-                                                const SizedBox(
-                                                  height: 5,
-                                                ),
                                                 data["deliveryOption"] == "Stay"
                                                     ? GestureDetector(
-                                                        child: AutoSizeText(
+                                                        child: Text(
                                                           "Follow Donee",
                                                           maxLines: 1,
                                                           style: GoogleFonts
@@ -611,8 +665,22 @@ class _UserDashboardState extends State<UserDashboard>
                                                           Navigator.of(context)
                                                               .push(
                                                             MaterialPageRoute(
-                                                              builder: (context) =>
-                                                                  const MapsPage(),
+                                                              builder:
+                                                                  (context) =>
+                                                                      MapsPage(
+                                                                firstName: data[
+                                                                    "dFirstName"],
+                                                                lastName: data[
+                                                                    "dLastName"],
+                                                                latitute: latitude!
+                                                                    .toDouble(),
+                                                                longitude: latitude!
+                                                                    .toDouble(),
+                                                                foodCategory: data[
+                                                                    "foodCategory"],
+                                                                dUid: data[
+                                                                    "dUid"],
+                                                              ),
                                                             ),
                                                           );
                                                         },
@@ -774,7 +842,7 @@ class _UserDashboardState extends State<UserDashboard>
                                   child: GestureDetector(
                                     onTap: () async {
                                       double distanceInMeters =
-                                          Geolocator.distanceBetween(
+                                          geolocator.Geolocator.distanceBetween(
                                         data["dLatitude"],
                                         data["dLongitude"],
                                         latitude!.toDouble(),
@@ -1490,7 +1558,7 @@ class _UserDashboardState extends State<UserDashboard>
                                                                 FontWeight.w500,
                                                           ),
                                                         ),
-                                                        onTap: () {
+                                                        onTap: () async {
                                                           Navigator.of(context)
                                                               .push(
                                                             MaterialPageRoute(
@@ -1519,6 +1587,52 @@ class _UserDashboardState extends State<UserDashboard>
                                                         },
                                                       )
                                                     : Container(),
+                                                GestureDetector(
+                                                  child: AutoSizeText(
+                                                    "Start tracking",
+                                                    maxLines: 1,
+                                                    style: GoogleFonts.poppins(
+                                                      color: CustomColors
+                                                          .textColor,
+                                                      fontSize: 24,
+                                                      fontWeight:
+                                                          FontWeight.w500,
+                                                    ),
+                                                  ),
+                                                  onTap: () {
+                                                    // _locationSubscription =
+                                                    //     _locationTracker
+                                                    //         .onLocationChanged
+                                                    //         .listen(
+                                                    //   (newLocalData) {
+                                                    //     if (_controller !=
+                                                    //         null) {
+                                                    //       _controller!
+                                                    //           .animateCamera(
+                                                    //         CameraUpdate
+                                                    //             .newCameraPosition(
+                                                    //           CameraPosition(
+                                                    //               bearing:
+                                                    //                   192.8334901395799,
+                                                    //               target: LatLng(
+                                                    //                   newLocalData
+                                                    //                       .latitude!
+                                                    //                       .toDouble(),
+                                                    //                   newLocalData
+                                                    //                       .longitude!
+                                                    //                       .toDouble()),
+                                                    //               tilt: 0,
+                                                    //               zoom: 18.00),
+                                                    //         ),
+                                                    //       );
+                                                    //       updateMarkerAndCircle(
+                                                    //           newLocalData,
+                                                    //           imageData);
+                                                    //     }
+                                                    //   },
+                                                    // );
+                                                  },
+                                                ),
                                                 const SizedBox(
                                                   height: 20,
                                                 ),

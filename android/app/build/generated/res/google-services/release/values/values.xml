@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="default_web_client_id" translatable="false">257256898341-7p1i6ef0lh618d709u8ul0622h5i63co.apps.googleusercontent.com</string>
+    <string name="gcm_defaultSenderId" translatable="false">257256898341</string>
+    <string name="google_api_key" translatable="false">AIzaSyA2aKgZmqmubBiQBH5C5W849phLQeWCqgY</string>
+    <string name="google_app_id" translatable="false">1:257256898341:android:d20c1f8ccd49caef30a4cc</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyA2aKgZmqmubBiQBH5C5W849phLQeWCqgY</string>
+    <string name="google_storage_bucket" translatable="false">washungryapp.appspot.com</string>
+    <string name="project_id" translatable="false">washungryapp</string>
+</resources>
