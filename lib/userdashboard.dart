@@ -39,12 +39,12 @@ int rating = 0;
 String currentUID = "";
 double? longitude;
 double? latitude;
-// geocoding.Placemark? place;
+geocoding.Placemark? place;
 String? fcmToken;
 bool isButtonEnabled = false;
 int selectedIndex = 0;
 String? docID;
-geocoding.Placemark? place;
+Timer? timer;
 
 @override
 class _UserDashboardState extends State<UserDashboard>
@@ -96,50 +96,9 @@ class _UserDashboardState extends State<UserDashboard>
       .snapshots();
   DatabaseReference userStatus = FirebaseDatabase.instance.ref(
       'users/${FirebaseAuth.instance.currentUser!.uid}/isCheckingLocation');
-  getLocation() async {
-    await locationTracker.enableBackgroundMode(enable: true);
-    locationTracker.onLocationChanged.listen(
-      (LocationData currentLocation) async {
-        List<geocoding.Placemark> placemarks =
-            await geocoding.placemarkFromCoordinates(
-          currentLocation.latitude!.toDouble(),
-          currentLocation.longitude!.toDouble(),
-        );
-        setState(() {
-          latitude = currentLocation.latitude;
-          longitude = currentLocation.longitude;
-          place = placemarks[0];
-          isButtonEnabled = true;
-        });
-        setState(() {});
-        userStatus.onValue.listen(
-          (DatabaseEvent event) async {
-            setState(() {
-              isCheckingLocation = event.snapshot.value.toString();
-            });
-            if (isCheckingLocation == "true") {
-              FirebaseDatabase.instance
-                  .ref("users/${FirebaseAuth.instance.currentUser!.uid}/")
-                  .update(
-                {
-                  'latitute':
-                      currentLocation.latitude!.toDouble().toStringAsFixed(4),
-                  'longitude':
-                      currentLocation.longitude!.toDouble().toStringAsFixed(4),
-                  'heading': currentLocation.heading,
-                  'headingAccuracy': currentLocation.accuracy,
-                },
-              );
-            } else {}
-          },
-        );
-      },
-    );
-  }
 
-  setAccuacry() async {
-    await locationTracker.changeSettings(accuracy: LocationAccuracy.powerSave);
-  }
+  Location locationTracker = Location();
+  String? isCheckingLocation;
 
   _onItemTapped(int index) {
     setState(
@@ -149,14 +108,9 @@ class _UserDashboardState extends State<UserDashboard>
     );
   }
 
-  initializefirebase() async {
-    await Firebase.initializeApp();
-  }
-
   requestPermissions() async {
     bool _serviceEnabled;
     PermissionStatus _permissionGranted;
-    LocationData _locationData;
 
     _serviceEnabled = await locationTracker.serviceEnabled();
     if (!_serviceEnabled) {
@@ -172,9 +126,21 @@ class _UserDashboardState extends State<UserDashboard>
       if (_permissionGranted != PermissionStatus.granted) {
         return;
       }
+      if (_permissionGranted == PermissionStatus.granted ||
+          _permissionGranted == PermissionStatus.grantedLimited) {}
     }
 
-    _locationData = await locationTracker.getLocation();
+    await locationTracker
+        .changeSettings(
+          accuracy: LocationAccuracy.high,
+          distanceFilter: 50,
+        )
+        .then(
+          (value) async => {
+            await locationTracker.enableBackgroundMode(enable: true),
+            getLocation(),
+          },
+        );
   }
 
   getUserData() {
@@ -199,21 +165,7 @@ class _UserDashboardState extends State<UserDashboard>
     });
   }
 
-  final Location locationTracker = Location();
-  String? isCheckingLocation;
-
-  @override
-  initState() {
-    initializefirebase();
-    setAccuacry();
-    requestPermissions();
-    getUserData();
-    getLocation();
-    super.initState();
-  }
-
-  @override
-  Widget build(BuildContext context) {
+  getLocation() {
     locationTracker.onLocationChanged.listen(
       (LocationData currentLocation) async {
         List<geocoding.Placemark> placemarks =
@@ -225,29 +177,32 @@ class _UserDashboardState extends State<UserDashboard>
           latitude = currentLocation.latitude;
           longitude = currentLocation.longitude;
           place = placemarks[0];
-          isButtonEnabled = true;
         });
+        isButtonEnabled = true;
         setState(() {});
+
         userStatus.onValue.listen(
           (DatabaseEvent event) async {
             setState(
               () {
-                isCheckingLocation = event.snapshot.value.toString();
-                if (isCheckingLocation == "true") {
-                  FirebaseDatabase.instance
-                      .ref("users/${FirebaseAuth.instance.currentUser!.uid}/")
-                      .update(
-                    {
-                      'latitute': currentLocation.latitude!
-                          .toDouble()
-                          .toStringAsFixed(4),
-                      'longitude': currentLocation.longitude!
-                          .toDouble()
-                          .toStringAsFixed(4),
-                      'heading': currentLocation.heading,
-                      'headingAccuracy': currentLocation.accuracy,
+                if (event.snapshot.value.toString() == "true") {
+                  setState(
+                    () {
+                      FirebaseDatabase.instance
+                          .ref(
+                              "users/${FirebaseAuth.instance.currentUser!.uid}/")
+                          .update(
+                        {
+                          'latitude': latitude,
+                          'longitude': longitude,
+                          'heading': currentLocation.heading,
+                          'accuracy': currentLocation.accuracy,
+                        },
+                      );
                     },
                   );
+                } else {
+                  print("Location is not being tracked");
                 }
               },
             );
@@ -255,7 +210,18 @@ class _UserDashboardState extends State<UserDashboard>
         );
       },
     );
+  }
 
+  @override
+  initState() {
+    getUserData();
+    requestPermissions();
+    super.initState();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    locationTracker.enableBackgroundMode(enable: true);
     final List _widgetOptions = [
       SafeArea(
         child: Padding(

@@ -13,6 +13,7 @@ import 'package:washungrystable/customwidgets.dart';
 import 'package:washungrystable/give_process/add_location.dart';
 import 'package:washungrystable/storage.dart';
 import 'package:washungrystable/userdashboard.dart';
+import 'package:profanity_filter/profanity_filter.dart';
 
 class AddInfo extends StatefulWidget {
   AddInfo({Key? key}) : super(key: key);
@@ -1089,7 +1090,10 @@ class _AddInfoState extends State<AddInfo> {
                       height: 100.0,
                       child: ElevatedButton(
                         onPressed: () async {
+                          final filter = ProfanityFilter();
                           print(selectedAllergies);
+                          List<String> wordsFound =
+                              filter.getAllProfanity(foodCategory.text);
                           if (foodCategory.text == "") {
                             Fluttertoast.showToast(
                                 msg: "Food category can not be left blank.");
@@ -1102,6 +1106,9 @@ class _AddInfoState extends State<AddInfo> {
                           } else if (photo == null) {
                             Fluttertoast.showToast(
                                 msg: "You must upload a photo");
+                          } else if (wordsFound.isNotEmpty) {
+                            Fluttertoast.showToast(
+                                msg: "Food category contains profanity.");
                           } else {
                             Navigator.of(context).push(
                               MaterialPageRoute(

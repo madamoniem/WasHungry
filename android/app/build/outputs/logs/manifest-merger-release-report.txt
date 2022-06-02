@@ -21,6 +21,7 @@ MERGED from [:flutter_local_notifications] C:\untitled\build\flutter_local_notif
 MERGED from [:url_launcher_android] C:\untitled\build\url_launcher_android\intermediates\library_manifest\release\AndroidManifest.xml:2:1-14:12
 MERGED from [:path_provider_android] C:\untitled\build\path_provider_android\intermediates\library_manifest\release\AndroidManifest.xml:2:1-7:12
 MERGED from [:shared_preferences_android] C:\untitled\build\shared_preferences_android\intermediates\library_manifest\release\AndroidManifest.xml:2:1-7:12
+MERGED from [:flutter_background] C:\untitled\build\flutter_background\intermediates\library_manifest\release\AndroidManifest.xml:2:1-20:12
 MERGED from [:map_launcher] C:\untitled\build\map_launcher\intermediates\library_manifest\release\AndroidManifest.xml:2:1-25:12
 MERGED from [:geocoding] C:\untitled\build\geocoding\intermediates\library_manifest\release\AndroidManifest.xml:2:1-7:12
 MERGED from [:fluttertoast] C:\untitled\build\fluttertoast\intermediates\library_manifest\release\AndroidManifest.xml:2:1-7:12
@@ -170,6 +171,8 @@ uses-permission#android.permission.FOREGROUND_SERVICE
 ADDED from C:\untitled\android\app\src\main\AndroidManifest.xml:5:5-77
 MERGED from [:geolocator_android] C:\untitled\build\geolocator_android\intermediates\library_manifest\release\AndroidManifest.xml:7:5-77
 MERGED from [:geolocator_android] C:\untitled\build\geolocator_android\intermediates\library_manifest\release\AndroidManifest.xml:7:5-77
+MERGED from [:flutter_background] C:\untitled\build\flutter_background\intermediates\library_manifest\release\AndroidManifest.xml:8:5-77
+MERGED from [:flutter_background] C:\untitled\build\flutter_background\intermediates\library_manifest\release\AndroidManifest.xml:8:5-77
 	android:name
 		ADDED from C:\untitled\android\app\src\main\AndroidManifest.xml:5:22-74
 uses-permission#android.permission.ACCESS_BACKGROUND_LOCATION
@@ -200,6 +203,8 @@ MERGED from [:flutter_local_notifications] C:\untitled\build\flutter_local_notif
 MERGED from [:flutter_local_notifications] C:\untitled\build\flutter_local_notifications\intermediates\library_manifest\release\AndroidManifest.xml:12:5-26:19
 MERGED from [:url_launcher_android] C:\untitled\build\url_launcher_android\intermediates\library_manifest\release\AndroidManifest.xml:7:5-12:19
 MERGED from [:url_launcher_android] C:\untitled\build\url_launcher_android\intermediates\library_manifest\release\AndroidManifest.xml:7:5-12:19
+MERGED from [:flutter_background] C:\untitled\build\flutter_background\intermediates\library_manifest\release\AndroidManifest.xml:10:5-18:19
+MERGED from [:flutter_background] C:\untitled\build\flutter_background\intermediates\library_manifest\release\AndroidManifest.xml:10:5-18:19
 MERGED from [:location] C:\untitled\build\location\intermediates\library_manifest\release\AndroidManifest.xml:10:5-16:19
 MERGED from [:location] C:\untitled\build\location\intermediates\library_manifest\release\AndroidManifest.xml:10:5-16:19
 MERGED from [com.google.firebase:firebase-analytics-ktx:21.0.0] C:\Users\hamad\.gradle\caches\transforms-2\files-2.1\74007a0645c20c47a19ea27ad5d2d7fa\jetified-firebase-analytics-ktx-21.0.0\AndroidManifest.xml:7:5-15:19
@@ -380,6 +385,8 @@ MERGED from [:path_provider_android] C:\untitled\build\path_provider_android\int
 MERGED from [:path_provider_android] C:\untitled\build\path_provider_android\intermediates\library_manifest\release\AndroidManifest.xml:5:5-44
 MERGED from [:shared_preferences_android] C:\untitled\build\shared_preferences_android\intermediates\library_manifest\release\AndroidManifest.xml:5:5-44
 MERGED from [:shared_preferences_android] C:\untitled\build\shared_preferences_android\intermediates\library_manifest\release\AndroidManifest.xml:5:5-44
+MERGED from [:flutter_background] C:\untitled\build\flutter_background\intermediates\library_manifest\release\AndroidManifest.xml:5:5-44
+MERGED from [:flutter_background] C:\untitled\build\flutter_background\intermediates\library_manifest\release\AndroidManifest.xml:5:5-44
 MERGED from [:map_launcher] C:\untitled\build\map_launcher\intermediates\library_manifest\release\AndroidManifest.xml:5:5-44
 MERGED from [:map_launcher] C:\untitled\build\map_launcher\intermediates\library_manifest\release\AndroidManifest.xml:5:5-44
 MERGED from [:geocoding] C:\untitled\build\geocoding\intermediates\library_manifest\release\AndroidManifest.xml:5:5-44
@@ -644,6 +651,8 @@ ADDED from [:firebase_storage] C:\untitled\build\firebase_storage\intermediates\
 		ADDED from [:firebase_storage] C:\untitled\build\firebase_storage\intermediates\library_manifest\release\AndroidManifest.xml:10:17-126
 uses-permission#android.permission.WAKE_LOCK
 ADDED from [:firebase_messaging] C:\untitled\build\firebase_messaging\intermediates\library_manifest\release\AndroidManifest.xml:8:5-68
+MERGED from [:flutter_background] C:\untitled\build\flutter_background\intermediates\library_manifest\release\AndroidManifest.xml:7:5-68
+MERGED from [:flutter_background] C:\untitled\build\flutter_background\intermediates\library_manifest\release\AndroidManifest.xml:7:5-68
 MERGED from [com.google.firebase:firebase-messaging:23.0.4] C:\Users\hamad\.gradle\caches\transforms-2\files-2.1\f4f1909b787fa7db21e0c9756576d643\jetified-firebase-messaging-23.0.4\AndroidManifest.xml:26:5-68
 MERGED from [com.google.firebase:firebase-messaging:23.0.4] C:\Users\hamad\.gradle\caches\transforms-2\files-2.1\f4f1909b787fa7db21e0c9756576d643\jetified-firebase-messaging-23.0.4\AndroidManifest.xml:26:5-68
 MERGED from [com.google.android.gms:play-services-measurement-api:21.0.0] C:\Users\hamad\.gradle\caches\transforms-2\files-2.1\7a7bbfa1e50b5c4d4ea6fb93d6055bd5\jetified-play-services-measurement-api-21.0.0\AndroidManifest.xml:24:5-68
@@ -850,6 +859,10 @@ ADDED from [:url_launcher_android] C:\untitled\build\url_launcher_android\interm
 		ADDED from [:url_launcher_android] C:\untitled\build\url_launcher_android\intermediates\library_manifest\release\AndroidManifest.xml:11:13-71
 	android:name
 		ADDED from [:url_launcher_android] C:\untitled\build\url_launcher_android\intermediates\library_manifest\release\AndroidManifest.xml:9:13-74
+service#de.julianassmann.flutter_background.IsolateHolderService
+ADDED from [:flutter_background] C:\untitled\build\flutter_background\intermediates\library_manifest\release\AndroidManifest.xml:11:9-17:19
+	android:name
+		ADDED from [:flutter_background] C:\untitled\build\flutter_background\intermediates\library_manifest\release\AndroidManifest.xml:11:18-89
 package#com.google.android.apps.maps
 ADDED from [:map_launcher] C:\untitled\build\map_launcher\intermediates\library_manifest\release\AndroidManifest.xml:8:9-64
 MERGED from [com.google.android.gms:play-services-maps:18.0.2] C:\Users\hamad\.gradle\caches\transforms-2\files-2.1\3bb31713e7c370fbaa9bef5c8544f515\jetified-play-services-maps-18.0.2\AndroidManifest.xml:33:9-64

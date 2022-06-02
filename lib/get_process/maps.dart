@@ -4,10 +4,13 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:geolocator/geolocator.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:location/location.dart';
 import 'package:washungrystable/customwidgets.dart';
+import 'package:washungrystable/userdashboard.dart';
+import 'package:washungrystable/userdashboard.dart' as user_dashboard;
 
 class MapsPage extends StatefulWidget {
   const MapsPage(
@@ -30,48 +33,58 @@ class MapsPage extends StatefulWidget {
 }
 
 class _MapsPageState extends State<MapsPage> with WidgetsBindingObserver {
-  double distanceInMeters = 1;
   Uint8List? imageData;
-  Timer? timer;
-  double latitude = 38.87165;
-  double longitude = -76.9897191;
+  double latitude = 38.9420684;
+  double longitude = -76.880841;
   double heading = 0;
-  double headingAccuracy = 0;
-  StreamSubscription? _locationSubscription;
+  double accuracy = 30;
   Marker? marker;
   Circle? circle;
   GoogleMapController? _controller;
-
+  Timer? timer;
+  Timer? secondTimer;
+  double distanceInMeters = 0;
   getMarkerasBytes() async {
     ByteData byteData =
         await DefaultAssetBundle.of(context).load("assets/images/car.png");
-    setState(() {
-      imageData = byteData.buffer.asUint8List();
-    });
+    if (mounted) {
+      setState(
+        () {
+          imageData = byteData.buffer.asUint8List();
+        },
+      );
+    }
   }
 
   void updateMarkerAndCircle() {
-    LatLng latlng = LatLng(latitude, longitude);
-    setState(
-      () {
-        marker = Marker(
+    LatLng latlng = LatLng(latitude.toDouble(), longitude.toDouble());
+    if (mounted) {
+      setState(
+        () {
+          marker = Marker(
             markerId: const MarkerId("home"),
             position: latlng,
-            rotation: 40,
+            rotation: heading,
             draggable: false,
             zIndex: 2,
             flat: true,
             anchor: const Offset(0.5, 0.5),
-            icon: BitmapDescriptor.fromBytes(imageData!));
-        circle = Circle(
+            infoWindow: InfoWindow(
+              title: "${widget.firstName} ${widget.lastName}",
+            ),
+            icon: BitmapDescriptor.fromBytes(imageData!),
+          );
+          circle = Circle(
             circleId: const CircleId("car"),
-            radius: headingAccuracy,
+            radius: accuracy,
             zIndex: 1,
             strokeColor: Colors.blue,
             center: latlng,
-            fillColor: Colors.blue.withAlpha(70));
-      },
-    );
+            fillColor: Colors.blue.withAlpha(70),
+          );
+        },
+      );
+    }
   }
 
   @override
@@ -84,22 +97,98 @@ class _MapsPageState extends State<MapsPage> with WidgetsBindingObserver {
     );
     timer = Timer.periodic(
       const Duration(seconds: 5),
-      (Timer t) {
-        _controller!.animateCamera(
-          CameraUpdate.newCameraPosition(
-            CameraPosition(
-                bearing: 192.8334901395799,
-                target: LatLng(latitude, longitude),
-                tilt: 0,
-                zoom: 18.00),
-          ),
-        );
-        updateMarkerAndCircle();
-      },
+      (Timer t) => animateCam(),
     );
-    // getMarker();
     getMarkerasBytes();
     super.initState();
+    DatabaseReference userLatitude =
+        FirebaseDatabase.instance.ref('users/${widget.dUid}/latitude');
+    DatabaseReference userLongitude =
+        FirebaseDatabase.instance.ref('users/${widget.dUid}/longitude');
+    DatabaseReference userHeading =
+        FirebaseDatabase.instance.ref('users/${widget.dUid}/heading');
+    DatabaseReference userAccuracy =
+        FirebaseDatabase.instance.ref('users/${widget.dUid}/accuracy');
+    userAccuracy.onValue.listen(
+      (DatabaseEvent event) async {
+        if (mounted) {
+          setState(
+            () {
+              accuracy = double.parse(
+                event.snapshot.value.toString(),
+              );
+            },
+          );
+        }
+      },
+    );
+    userHeading.onValue.listen(
+      (DatabaseEvent event) async {
+        distanceInMeters = Geolocator.distanceBetween(
+          widget.latitute,
+          widget.longitude,
+          user_dashboard.latitude!.toDouble(),
+          user_dashboard.longitude!.toDouble(),
+        );
+        if (mounted) {
+          setState(
+            () {
+              heading = double.parse(
+                event.snapshot.value.toString(),
+              );
+            },
+          );
+        }
+      },
+    );
+    userLatitude.onValue.listen(
+      (DatabaseEvent event) async {
+        print("$longitude, $latitude");
+        distanceInMeters = Geolocator.distanceBetween(
+          widget.latitute,
+          widget.longitude,
+          user_dashboard.latitude!.toDouble(),
+          user_dashboard.longitude!.toDouble(),
+        );
+        if (mounted) {
+          setState(
+            () {
+              latitude = double.parse(
+                event.snapshot.value.toString(),
+              );
+              distanceInMeters = Geolocator.distanceBetween(
+                widget.latitute,
+                widget.longitude,
+                user_dashboard.latitude!.toDouble(),
+                user_dashboard.longitude!.toDouble(),
+              );
+            },
+          );
+        }
+      },
+    );
+    userLongitude.onValue.listen(
+      (DatabaseEvent event) async {
+        print("$longitude, $latitude");
+
+        if (mounted) {
+          setState(
+            () {
+              longitude = double.parse(
+                event.snapshot.value.toString(),
+              );
+
+              distanceInMeters = Geolocator.distanceBetween(
+                widget.latitute,
+                widget.longitude,
+                user_dashboard.latitude!.toDouble(),
+                user_dashboard.longitude!.toDouble(),
+              );
+            },
+          );
+        }
+      },
+    );
   }
 
   @override
@@ -111,6 +200,11 @@ class _MapsPageState extends State<MapsPage> with WidgetsBindingObserver {
         },
       );
     } else {
+      Navigator.of(context).push(
+        MaterialPageRoute(
+          builder: (context) => const UserDashboard(),
+        ),
+      );
       FirebaseDatabase.instance.ref("users/${widget.dUid}/").update(
         {
           'isCheckingLocation': "false",
@@ -119,103 +213,38 @@ class _MapsPageState extends State<MapsPage> with WidgetsBindingObserver {
     }
   }
 
+  animateCam() {
+    _controller!.animateCamera(
+      CameraUpdate.newCameraPosition(
+        CameraPosition(
+          bearing: -193,
+          target: LatLng(latitude.toDouble(), longitude.toDouble()),
+          tilt: 0,
+          zoom: 17,
+        ),
+      ),
+    );
+    setState(() {});
+    updateMarkerAndCircle();
+  }
+
   @override
   void dispose() {
-    if (_locationSubscription != null) {
-      _locationSubscription!.cancel();
-    }
     _controller!.dispose();
-    timer?.cancel();
+    timer!.cancel();
+    secondTimer!.cancel();
     WidgetsBinding.instance.removeObserver(this);
     super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
-    DatabaseReference userLatitude =
-        FirebaseDatabase.instance.ref('users/${widget.dUid}/latitute');
-    DatabaseReference userLongitude =
-        FirebaseDatabase.instance.ref('users/${widget.dUid}/longitude');
-    DatabaseReference userHeading =
-        FirebaseDatabase.instance.ref('users/${widget.dUid}/heading');
-    DatabaseReference userHeadingAccuracy =
-        FirebaseDatabase.instance.ref('users/${widget.dUid}/headingAccuracy');
-    userLatitude.onValue.listen(
-      (DatabaseEvent event) async {
-        DatabaseEvent userHeadingValue = await userHeading.once();
-        DatabaseEvent userHeadingAccuracyValue =
-            await userHeadingAccuracy.once();
-        setState(
-          () {
-            heading = double.parse(
-                userHeadingAccuracyValue.snapshot.value.toString());
-            headingAccuracy =
-                double.parse(userHeadingValue.snapshot.value.toString());
-            latitude = double.parse(
-              event.snapshot.value.toString(),
-            );
-          },
-        );
-      },
-    );
-    userLongitude.onValue.listen(
-      (DatabaseEvent event) async {
-        DatabaseEvent userHeadingValue = await userHeading.once();
-        DatabaseEvent userHeadingAccuracyValue =
-            await userHeadingAccuracy.once();
-        setState(
-          () {
-            heading = double.parse(
-                userHeadingAccuracyValue.snapshot.value.toString());
-            headingAccuracy =
-                double.parse(userHeadingValue.snapshot.value.toString());
-
-            longitude = double.parse(
-              event.snapshot.value.toString(),
-            );
-          },
-        );
-      },
-    );
-
-    // if (_controller != null) {
-    //   _controller!.animateCamera(
-    //     CameraUpdate.newCameraPosition(
-    //       CameraPosition(
-    //         bearing: 192.8334901395799,
-    //         target: LatLng(latitude, longitude),
-    //         tilt: 0,
-    //         zoom: 9,
-    //       ),
-    //     ),
-    //   );
-    //   // setState(
-    //   //   () {
-    //   //     marker = Marker(
-    //   //       markerId: const MarkerId("home"),
-    //   //       position: latlng,
-    //   //       draggable: false,
-    //   //       zIndex: 2,
-    //   //       flat: true,
-    //   //       anchor: const Offset(0.5, 0.5),
-    //   //       icon: BitmapDescriptor.fromBytes(imageData!),
-    //   //     );
-    //   //     circle = Circle(
-    //   //         circleId: const CircleId("car"),
-    //   //         zIndex: 1,
-    //   //         strokeColor: Colors.blue,
-    //   //         center: latlng,
-    //   //         fillColor: Colors.blue.withAlpha(70));
-    //   //   },
-    //   // );
-    // }
-
     CameraPosition initialLocation = CameraPosition(
       target: LatLng(
-        latitude.toDouble(),
-        longitude.toDouble(),
+        user_dashboard.latitude!.toDouble(),
+        user_dashboard.longitude!.toDouble(),
       ),
-      zoom: 18,
+      zoom: 17,
     );
     return Scaffold(
       backgroundColor: CustomColors.secondary,
@@ -224,7 +253,11 @@ class _MapsPageState extends State<MapsPage> with WidgetsBindingObserver {
         backgroundColor: Colors.transparent,
         leading: GestureDetector(
           onTap: () {
-            Navigator.pop(context);
+            Navigator.of(context).push(
+              MaterialPageRoute(
+                builder: (context) => const UserDashboard(),
+              ),
+            );
             FirebaseDatabase.instance.ref("users/${widget.dUid}/").update(
               {
                 'isCheckingLocation': "false",
@@ -246,10 +279,21 @@ class _MapsPageState extends State<MapsPage> with WidgetsBindingObserver {
           Expanded(
             flex: 16,
             child: GoogleMap(
+              // polylines: Polyline(
+              //   points: [],
+              // ),
+
+              zoomControlsEnabled: false,
+              indoorViewEnabled: true,
+              tiltGesturesEnabled: false,
+              trafficEnabled: true,
+              buildingsEnabled: false,
+              myLocationButtonEnabled: true,
               mapType: MapType.hybrid,
               initialCameraPosition: initialLocation,
-              markers: {marker!},
-              circles: {circle!},
+
+              markers: Set.of((marker != null) ? [marker!] : []),
+              circles: Set.of((circle != null) ? [circle!] : []),
               onMapCreated: (GoogleMapController controller) {
                 _controller = controller;
               },

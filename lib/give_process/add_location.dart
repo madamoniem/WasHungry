@@ -86,7 +86,6 @@ class _AddLocationState extends State<AddLocation> {
                 height: 20,
               ),
               Container(
-                height: 180,
                 width: double.infinity,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(15),
@@ -335,7 +334,7 @@ class _AddLocationState extends State<AddLocation> {
                           onPrimary: CustomColors.primary,
                           elevation: 0,
                           shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(15.0),
+                            borderRadius: BorderRadius.circular(40.0),
                           ),
                           minimumSize: const Size(double.infinity, 60),
                         ),

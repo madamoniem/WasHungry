@@ -235,6 +235,13 @@
             android:exported="false"
             android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
 
+        <service android:name="de.julianassmann.flutter_background.IsolateHolderService" >
+
+            <!--
+            android:exported="false"
+            android:foregroundServiceType="connectedDevice|dataSync"
+            -->
+        </service>
         <service
             android:name="com.lyokone.location.FlutterLocationService"
             android:enabled="true"
