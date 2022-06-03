@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -13,6 +14,8 @@ TextStyle statTextStyles = GoogleFonts.poppins(
   fontSize: 18,
   fontWeight: FontWeight.w400,
 );
+
+User? currentUser = FirebaseAuth.instance.currentUser;
 
 TextStyle goldStatTextStyles = GoogleFonts.poppins(
   color: CustomColors.getColor,
@@ -47,6 +50,13 @@ class CustomText extends StatelessWidget {
       ),
     );
   }
+}
+
+extension CapExtension on String {
+  String get inCaps => '${this[0].toUpperCase()}${this.substring(1)}';
+  String get allInCaps => toUpperCase();
+  String get capitalizeFirstofEach =>
+      split(", ").map((str) => str.toCapitalized()).join(", ");
 }
 
 class InputField extends StatelessWidget {

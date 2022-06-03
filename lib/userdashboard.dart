@@ -13,6 +13,8 @@ import 'package:map_launcher/map_launcher.dart';
 import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:washungrystable/customwidgets.dart';
+import 'package:washungrystable/give_process/scanFood.dart';
+import 'package:washungrystable/give_process/searchFood.dart';
 import 'package:washungrystable/test.dart';
 import 'package:washungrystable/get_process/maps.dart';
 import 'package:washungrystable/load_nearby_donations.dart';
@@ -173,11 +175,9 @@ class _UserDashboardState extends State<UserDashboard>
           currentLocation.latitude!.toDouble(),
           currentLocation.longitude!.toDouble(),
         );
-        setState(() {
-          latitude = currentLocation.latitude;
-          longitude = currentLocation.longitude;
-          place = placemarks[0];
-        });
+        latitude = currentLocation.latitude;
+        longitude = currentLocation.longitude;
+        place = placemarks[0];
         isButtonEnabled = true;
         setState(() {});
 
@@ -260,10 +260,80 @@ class _UserDashboardState extends State<UserDashboard>
                 children: [
                   Bounceable(
                     onTap: () {
-                      Navigator.of(context).push(
-                        MaterialPageRoute(
-                          builder: (context) => AddInfo(),
-                        ),
+                      showModalBottomSheet(
+                        context: context,
+                        builder: (BuildContext context) {
+                          return SafeArea(
+                            child: SingleChildScrollView(
+                              child: Padding(
+                                padding: const EdgeInsets.only(
+                                    top: 40, left: 30, right: 50),
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  children: [
+                                    Text(
+                                      'Give',
+                                      style: TextStyle(
+                                        fontFamily: "Recoleta",
+                                        color: CustomColors.textColor,
+                                        fontSize: 40,
+                                        fontWeight: FontWeight.w700,
+                                      ),
+                                    ),
+                                    const SizedBox(
+                                      height: 10,
+                                    ),
+                                    GestureDetector(
+                                      onTap: () {
+                                        Navigator.of(context).push(
+                                          MaterialPageRoute(
+                                            builder: (context) =>
+                                                const ScanFood(),
+                                          ),
+                                        );
+                                      },
+                                      child: AutoSizeText(
+                                        'Scan item barcode',
+                                        maxLines: 1,
+                                        style: GoogleFonts.poppins(
+                                          color: CustomColors.textColor,
+                                          fontSize: 24,
+                                          fontWeight: FontWeight.w600,
+                                        ),
+                                      ),
+                                    ),
+                                    const SizedBox(
+                                      height: 5,
+                                    ),
+                                    GestureDetector(
+                                      onTap: () {
+                                        Navigator.of(context).push(
+                                          MaterialPageRoute(
+                                            builder: (context) =>
+                                                const SearchFood(),
+                                          ),
+                                        );
+                                      },
+                                      child: AutoSizeText(
+                                        "Search item",
+                                        maxLines: 1,
+                                        style: GoogleFonts.poppins(
+                                          color: CustomColors.textColor,
+                                          fontSize: 24,
+                                          fontWeight: FontWeight.w600,
+                                        ),
+                                      ),
+                                    ),
+                                    const SizedBox(
+                                      height: 20,
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
+                          );
+                        },
                       );
                     },
                     child: Container(
