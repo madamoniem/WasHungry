@@ -6,27 +6,29 @@ INJECTED from C:\untitled\android\app\src\main\AndroidManifest.xml:1:1-52:12
 INJECTED from C:\untitled\android\app\src\main\AndroidManifest.xml:1:1-52:12
 MERGED from C:\untitled\android\app\src\main\AndroidManifest.xml:1:1-52:12
 MERGED from [:firebase_database] C:\untitled\build\firebase_database\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-15:12
+MERGED from [:firebase_messaging] C:\untitled\build\firebase_messaging\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-46:12
 MERGED from [:firebase_performance] C:\untitled\build\firebase_performance\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-17:12
 MERGED from [:cloud_firestore] C:\untitled\build\cloud_firestore\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-15:12
 MERGED from [:firebase_auth] C:\untitled\build\firebase_auth\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-15:12
 MERGED from [:firebase_storage] C:\untitled\build\firebase_storage\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-15:12
-MERGED from [:firebase_messaging] C:\untitled\build\firebase_messaging\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-46:12
 MERGED from [:firebase_core] C:\untitled\build\firebase_core\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-15:12
 MERGED from [:geolocator_android] C:\untitled\build\geolocator_android\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-17:12
 MERGED from [:address_search_field] C:\untitled\build\address_search_field\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-7:12
 MERGED from [:google_maps_flutter] C:\untitled\build\google_maps_flutter\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-7:12
-MERGED from [:file_picker] C:\untitled\build\file_picker\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-17:12
-MERGED from [:flutter_barcode_scanner] C:\untitled\build\flutter_barcode_scanner\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-21:12
-MERGED from [:image_picker_android] C:\untitled\build\image_picker_android\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-19:12
-MERGED from [:flutter_plugin_android_lifecycle] C:\untitled\build\flutter_plugin_android_lifecycle\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-7:12
 MERGED from [:flutter_local_notifications] C:\untitled\build\flutter_local_notifications\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-28:12
-MERGED from [:url_launcher_android] C:\untitled\build\url_launcher_android\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-14:12
+MERGED from [:file_picker] C:\untitled\build\file_picker\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-17:12
 MERGED from [:path_provider_android] C:\untitled\build\path_provider_android\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-7:12
+MERGED from [:flutter_barcode_scanner] C:\untitled\build\flutter_barcode_scanner\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-21:12
 MERGED from [:shared_preferences_android] C:\untitled\build\shared_preferences_android\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-7:12
 MERGED from [:flutter_background] C:\untitled\build\flutter_background\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-20:12
 MERGED from [:map_launcher] C:\untitled\build\map_launcher\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-25:12
 MERGED from [:geocoding] C:\untitled\build\geocoding\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-7:12
 MERGED from [:fluttertoast] C:\untitled\build\fluttertoast\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-7:12
+MERGED from [:image_picker_android] C:\untitled\build\image_picker_android\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-19:12
+MERGED from [:flutter_plugin_android_lifecycle] C:\untitled\build\flutter_plugin_android_lifecycle\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-7:12
+MERGED from [:url_launcher_android] C:\untitled\build\url_launcher_android\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-14:12
+MERGED from [:package_info_plus] C:\untitled\build\package_info_plus\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-7:12
+MERGED from [:device_info_plus] C:\untitled\build\device_info_plus\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-7:12
 MERGED from [:location] C:\untitled\build\location\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-18:12
 MERGED from [com.google.firebase:firebase-analytics-ktx:21.0.0] C:\Users\hamad\.gradle\caches\transforms-2\files-2.1\74007a0645c20c47a19ea27ad5d2d7fa\jetified-firebase-analytics-ktx-21.0.0\AndroidManifest.xml:2:1-17:12
 MERGED from [com.google.firebase:firebase-common-ktx:20.1.1] C:\Users\hamad\.gradle\caches\transforms-2\files-2.1\59443fbac3dd83115de53e200e078ccb\jetified-firebase-common-ktx-20.1.1\AndroidManifest.xml:2:1-21:12
@@ -54,7 +56,6 @@ MERGED from [com.google.firebase:firebase-common:20.1.1] C:\Users\hamad\.gradle\
 MERGED from [com.google.android.material:material:1.3.0] C:\Users\hamad\.gradle\caches\transforms-2\files-2.1\45b03f32f613b431af8863e3906f6a4a\material-1.3.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.constraintlayout:constraintlayout:2.0.1] C:\Users\hamad\.gradle\caches\transforms-2\files-2.1\607c9d768b07972f8ca14c49c8ae5c38\constraintlayout-2.0.1\AndroidManifest.xml:2:1-11:12
 MERGED from [androidx.appcompat:appcompat:1.2.0] C:\Users\hamad\.gradle\caches\transforms-2\files-2.1\08691a3ab1bf2ac661e07eb92eefdf5e\appcompat-1.2.0\AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.core:core-ktx:1.3.2] C:\Users\hamad\.gradle\caches\transforms-2\files-2.1\dc119fe261fe106f7eb458a5d4928375\jetified-core-ktx-1.3.2\AndroidManifest.xml:2:1-9:12
 MERGED from [androidx.exifinterface:exifinterface:1.3.0] C:\Users\hamad\.gradle\caches\transforms-2\files-2.1\c0359ed898300ffe0cfb5abf50f286bf\exifinterface-1.3.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.legacy:legacy-support-v4:1.0.0] C:\Users\hamad\.gradle\caches\transforms-2\files-2.1\c23b1edba617b0d9913c5c8dc007670a\legacy-support-v4-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.browser:browser:1.0.0] C:\Users\hamad\.gradle\caches\transforms-2\files-2.1\324433985c2fb61d6ec0bf8704d5e82a\browser-1.0.0\AndroidManifest.xml:17:1-22:12
@@ -66,6 +67,7 @@ MERGED from [com.google.android.gms:play-services-measurement-impl:21.0.0] C:\Us
 MERGED from [com.google.android.gms:play-services-stats:17.0.2] C:\Users\hamad\.gradle\caches\transforms-2\files-2.1\f9bb1c55ad97bfb4b6900bedfd5b3b77\jetified-play-services-stats-17.0.2\AndroidManifest.xml:2:1-9:12
 MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] C:\Users\hamad\.gradle\caches\transforms-2\files-2.1\a3ba356fc7aada0272b1a06a9cf5f5cf\legacy-support-core-utils-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\Users\hamad\.gradle\caches\transforms-2\files-2.1\59bdf741b9d071f8c4313c759bb9aa7e\localbroadcastmanager-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.core:core-ktx:1.3.2] C:\Users\hamad\.gradle\caches\transforms-2\files-2.1\dc119fe261fe106f7eb458a5d4928375\jetified-core-ktx-1.3.2\AndroidManifest.xml:2:1-9:12
 MERGED from [com.google.firebase:firebase-components:17.0.0] C:\Users\hamad\.gradle\caches\transforms-2\files-2.1\1433f022cd77992daac33c5da491d193\jetified-firebase-components-17.0.0\AndroidManifest.xml:15:1-23:12
 MERGED from [androidx.media:media:1.1.0] C:\Users\hamad\.gradle\caches\transforms-2\files-2.1\04fbac0cd5b3e704424c7e550f8182d7\media-1.1.0\AndroidManifest.xml:17:1-24:12
 MERGED from [com.google.android.gms:play-services-maps:18.0.2] C:\Users\hamad\.gradle\caches\transforms-2\files-2.1\3bb31713e7c370fbaa9bef5c8544f515\jetified-play-services-maps-18.0.2\AndroidManifest.xml:17:1-44:12
@@ -79,9 +81,9 @@ MERGED from [com.google.android.gms:play-services-flags:17.0.0] C:\Users\hamad\.
 MERGED from [com.google.android.gms:play-services-phenotype:17.0.0] C:\Users\hamad\.gradle\caches\transforms-2\files-2.1\274f21de4fcd79bf985aefb59155ee42\jetified-play-services-phenotype-17.0.0\AndroidManifest.xml:17:1-24:12
 MERGED from [com.google.android.gms:play-services-base:18.0.1] C:\Users\hamad\.gradle\caches\transforms-2\files-2.1\21e499c6d4c07677055c1a95d93cf585\jetified-play-services-base-18.0.1\AndroidManifest.xml:16:1-24:12
 MERGED from [com.google.android.gms:play-services-places-placereport:17.0.0] C:\Users\hamad\.gradle\caches\transforms-2\files-2.1\bafd7d3a35650a4019cf0df8aaefdc05\jetified-play-services-places-placereport-17.0.0\AndroidManifest.xml:17:1-24:12
-MERGED from [com.google.firebase:firebase-installations-interop:17.0.1] C:\Users\hamad\.gradle\caches\transforms-2\files-2.1\fd5e9693e33001f7c993b17800a4a4e9\jetified-firebase-installations-interop-17.0.1\AndroidManifest.xml:15:1-23:12
 MERGED from [com.google.android.gms:play-services-cloud-messaging:17.0.1] C:\Users\hamad\.gradle\caches\transforms-2\files-2.1\1fd373e1299585b1a7e2dc950e606042\jetified-play-services-cloud-messaging-17.0.1\AndroidManifest.xml:2:1-13:12
 MERGED from [com.google.firebase:firebase-iid-interop:17.1.0] C:\Users\hamad\.gradle\caches\transforms-2\files-2.1\640170a7db9aeca8e0c1f04b6fc84c91\jetified-firebase-iid-interop-17.1.0\AndroidManifest.xml:2:1-10:12
+MERGED from [com.google.firebase:firebase-installations-interop:17.0.1] C:\Users\hamad\.gradle\caches\transforms-2\files-2.1\fd5e9693e33001f7c993b17800a4a4e9\jetified-firebase-installations-interop-17.0.1\AndroidManifest.xml:15:1-23:12
 MERGED from [com.google.android.gms:play-services-tasks:18.0.1] C:\Users\hamad\.gradle\caches\transforms-2\files-2.1\119330ea3cb8474530daed4e0df2d30d\jetified-play-services-tasks-18.0.1\AndroidManifest.xml:2:1-6:12
 MERGED from [com.google.firebase:firebase-measurement-connector:19.0.0] C:\Users\hamad\.gradle\caches\transforms-2\files-2.1\855d53a6b92ca52e0387edb731f6ad13\jetified-firebase-measurement-connector-19.0.0\AndroidManifest.xml:17:1-25:12
 MERGED from [com.google.android.gms:play-services-ads-identifier:18.0.0] C:\Users\hamad\.gradle\caches\transforms-2\files-2.1\0e7ffa425919ab294dbd6fcfcd2e13bb\jetified-play-services-ads-identifier-18.0.0\AndroidManifest.xml:17:1-27:12
@@ -150,10 +152,10 @@ uses-permission#android.permission.INTERNET
 ADDED from C:\untitled\android\app\src\main\AndroidManifest.xml:4:5-66
 MERGED from C:\untitled\android\app\src\main\AndroidManifest.xml:4:5-66
 MERGED from C:\untitled\android\app\src\main\AndroidManifest.xml:4:5-66
-MERGED from [:firebase_performance] C:\untitled\build\firebase_performance\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-67
-MERGED from [:firebase_performance] C:\untitled\build\firebase_performance\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-67
 MERGED from [:firebase_messaging] C:\untitled\build\firebase_messaging\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-67
 MERGED from [:firebase_messaging] C:\untitled\build\firebase_messaging\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-67
+MERGED from [:firebase_performance] C:\untitled\build\firebase_performance\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-67
+MERGED from [:firebase_performance] C:\untitled\build\firebase_performance\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-67
 MERGED from [com.google.firebase:firebase-perf:20.0.6] C:\Users\hamad\.gradle\caches\transforms-2\files-2.1\d8aec4454526865351603e1c440a7423\jetified-firebase-perf-20.0.6\AndroidManifest.xml:11:5-67
 MERGED from [com.google.firebase:firebase-perf:20.0.6] C:\Users\hamad\.gradle\caches\transforms-2\files-2.1\d8aec4454526865351603e1c440a7423\jetified-firebase-perf-20.0.6\AndroidManifest.xml:11:5-67
 MERGED from [com.google.android.datatransport:transport-backend-cct:3.1.4] C:\Users\hamad\.gradle\caches\transforms-2\files-2.1\8d76ea948177d2d81526516fdf102912\jetified-transport-backend-cct-3.1.4\AndroidManifest.xml:26:5-67
@@ -200,6 +202,8 @@ application
 ADDED from C:\untitled\android\app\src\main\AndroidManifest.xml:7:4-51:19
 MERGED from [:firebase_database] C:\untitled\build\firebase_database\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-13:19
 MERGED from [:firebase_database] C:\untitled\build\firebase_database\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-13:19
+MERGED from [:firebase_messaging] C:\untitled\build\firebase_messaging\intermediates\library_manifest\debug\AndroidManifest.xml:11:5-44:19
+MERGED from [:firebase_messaging] C:\untitled\build\firebase_messaging\intermediates\library_manifest\debug\AndroidManifest.xml:11:5-44:19
 MERGED from [:firebase_performance] C:\untitled\build\firebase_performance\intermediates\library_manifest\debug\AndroidManifest.xml:9:5-15:19
 MERGED from [:firebase_performance] C:\untitled\build\firebase_performance\intermediates\library_manifest\debug\AndroidManifest.xml:9:5-15:19
 MERGED from [:cloud_firestore] C:\untitled\build\cloud_firestore\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-13:19
@@ -208,22 +212,20 @@ MERGED from [:firebase_auth] C:\untitled\build\firebase_auth\intermediates\libra
 MERGED from [:firebase_auth] C:\untitled\build\firebase_auth\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-13:19
 MERGED from [:firebase_storage] C:\untitled\build\firebase_storage\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-13:19
 MERGED from [:firebase_storage] C:\untitled\build\firebase_storage\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-13:19
-MERGED from [:firebase_messaging] C:\untitled\build\firebase_messaging\intermediates\library_manifest\debug\AndroidManifest.xml:11:5-44:19
-MERGED from [:firebase_messaging] C:\untitled\build\firebase_messaging\intermediates\library_manifest\debug\AndroidManifest.xml:11:5-44:19
 MERGED from [:firebase_core] C:\untitled\build\firebase_core\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-13:19
 MERGED from [:firebase_core] C:\untitled\build\firebase_core\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-13:19
 MERGED from [:geolocator_android] C:\untitled\build\geolocator_android\intermediates\library_manifest\debug\AndroidManifest.xml:9:5-15:19
 MERGED from [:geolocator_android] C:\untitled\build\geolocator_android\intermediates\library_manifest\debug\AndroidManifest.xml:9:5-15:19
-MERGED from [:flutter_barcode_scanner] C:\untitled\build\flutter_barcode_scanner\intermediates\library_manifest\debug\AndroidManifest.xml:15:5-19:19
-MERGED from [:flutter_barcode_scanner] C:\untitled\build\flutter_barcode_scanner\intermediates\library_manifest\debug\AndroidManifest.xml:15:5-19:19
-MERGED from [:image_picker_android] C:\untitled\build\image_picker_android\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-17:19
-MERGED from [:image_picker_android] C:\untitled\build\image_picker_android\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-17:19
 MERGED from [:flutter_local_notifications] C:\untitled\build\flutter_local_notifications\intermediates\library_manifest\debug\AndroidManifest.xml:12:5-26:19
 MERGED from [:flutter_local_notifications] C:\untitled\build\flutter_local_notifications\intermediates\library_manifest\debug\AndroidManifest.xml:12:5-26:19
-MERGED from [:url_launcher_android] C:\untitled\build\url_launcher_android\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-12:19
-MERGED from [:url_launcher_android] C:\untitled\build\url_launcher_android\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-12:19
+MERGED from [:flutter_barcode_scanner] C:\untitled\build\flutter_barcode_scanner\intermediates\library_manifest\debug\AndroidManifest.xml:15:5-19:19
+MERGED from [:flutter_barcode_scanner] C:\untitled\build\flutter_barcode_scanner\intermediates\library_manifest\debug\AndroidManifest.xml:15:5-19:19
 MERGED from [:flutter_background] C:\untitled\build\flutter_background\intermediates\library_manifest\debug\AndroidManifest.xml:10:5-18:19
 MERGED from [:flutter_background] C:\untitled\build\flutter_background\intermediates\library_manifest\debug\AndroidManifest.xml:10:5-18:19
+MERGED from [:image_picker_android] C:\untitled\build\image_picker_android\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-17:19
+MERGED from [:image_picker_android] C:\untitled\build\image_picker_android\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-17:19
+MERGED from [:url_launcher_android] C:\untitled\build\url_launcher_android\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-12:19
+MERGED from [:url_launcher_android] C:\untitled\build\url_launcher_android\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-12:19
 MERGED from [:location] C:\untitled\build\location\intermediates\library_manifest\debug\AndroidManifest.xml:10:5-16:19
 MERGED from [:location] C:\untitled\build\location\intermediates\library_manifest\debug\AndroidManifest.xml:10:5-16:19
 MERGED from [com.google.firebase:firebase-analytics-ktx:21.0.0] C:\Users\hamad\.gradle\caches\transforms-2\files-2.1\74007a0645c20c47a19ea27ad5d2d7fa\jetified-firebase-analytics-ktx-21.0.0\AndroidManifest.xml:7:5-15:19
@@ -388,6 +390,8 @@ INJECTED from C:\untitled\android\app\src\main\AndroidManifest.xml
 INJECTED from C:\untitled\android\app\src\main\AndroidManifest.xml
 MERGED from [:firebase_database] C:\untitled\build\firebase_database\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [:firebase_database] C:\untitled\build\firebase_database\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
+MERGED from [:firebase_messaging] C:\untitled\build\firebase_messaging\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
+MERGED from [:firebase_messaging] C:\untitled\build\firebase_messaging\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [:firebase_performance] C:\untitled\build\firebase_performance\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [:firebase_performance] C:\untitled\build\firebase_performance\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [:cloud_firestore] C:\untitled\build\cloud_firestore\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
@@ -396,8 +400,6 @@ MERGED from [:firebase_auth] C:\untitled\build\firebase_auth\intermediates\libra
 MERGED from [:firebase_auth] C:\untitled\build\firebase_auth\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [:firebase_storage] C:\untitled\build\firebase_storage\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [:firebase_storage] C:\untitled\build\firebase_storage\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
-MERGED from [:firebase_messaging] C:\untitled\build\firebase_messaging\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
-MERGED from [:firebase_messaging] C:\untitled\build\firebase_messaging\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [:firebase_core] C:\untitled\build\firebase_core\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [:firebase_core] C:\untitled\build\firebase_core\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [:geolocator_android] C:\untitled\build\geolocator_android\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
@@ -406,20 +408,14 @@ MERGED from [:address_search_field] C:\untitled\build\address_search_field\inter
 MERGED from [:address_search_field] C:\untitled\build\address_search_field\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [:google_maps_flutter] C:\untitled\build\google_maps_flutter\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [:google_maps_flutter] C:\untitled\build\google_maps_flutter\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
-MERGED from [:file_picker] C:\untitled\build\file_picker\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
-MERGED from [:file_picker] C:\untitled\build\file_picker\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
-MERGED from [:flutter_barcode_scanner] C:\untitled\build\flutter_barcode_scanner\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-7:41
-MERGED from [:flutter_barcode_scanner] C:\untitled\build\flutter_barcode_scanner\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-7:41
-MERGED from [:image_picker_android] C:\untitled\build\image_picker_android\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
-MERGED from [:image_picker_android] C:\untitled\build\image_picker_android\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
-MERGED from [:flutter_plugin_android_lifecycle] C:\untitled\build\flutter_plugin_android_lifecycle\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
-MERGED from [:flutter_plugin_android_lifecycle] C:\untitled\build\flutter_plugin_android_lifecycle\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [:flutter_local_notifications] C:\untitled\build\flutter_local_notifications\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [:flutter_local_notifications] C:\untitled\build\flutter_local_notifications\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
-MERGED from [:url_launcher_android] C:\untitled\build\url_launcher_android\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
-MERGED from [:url_launcher_android] C:\untitled\build\url_launcher_android\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
+MERGED from [:file_picker] C:\untitled\build\file_picker\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
+MERGED from [:file_picker] C:\untitled\build\file_picker\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [:path_provider_android] C:\untitled\build\path_provider_android\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [:path_provider_android] C:\untitled\build\path_provider_android\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
+MERGED from [:flutter_barcode_scanner] C:\untitled\build\flutter_barcode_scanner\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:flutter_barcode_scanner] C:\untitled\build\flutter_barcode_scanner\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-7:41
 MERGED from [:shared_preferences_android] C:\untitled\build\shared_preferences_android\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [:shared_preferences_android] C:\untitled\build\shared_preferences_android\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [:flutter_background] C:\untitled\build\flutter_background\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
@@ -430,6 +426,16 @@ MERGED from [:geocoding] C:\untitled\build\geocoding\intermediates\library_manif
 MERGED from [:geocoding] C:\untitled\build\geocoding\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [:fluttertoast] C:\untitled\build\fluttertoast\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [:fluttertoast] C:\untitled\build\fluttertoast\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
+MERGED from [:image_picker_android] C:\untitled\build\image_picker_android\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
+MERGED from [:image_picker_android] C:\untitled\build\image_picker_android\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
+MERGED from [:flutter_plugin_android_lifecycle] C:\untitled\build\flutter_plugin_android_lifecycle\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
+MERGED from [:flutter_plugin_android_lifecycle] C:\untitled\build\flutter_plugin_android_lifecycle\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
+MERGED from [:url_launcher_android] C:\untitled\build\url_launcher_android\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
+MERGED from [:url_launcher_android] C:\untitled\build\url_launcher_android\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
+MERGED from [:package_info_plus] C:\untitled\build\package_info_plus\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
+MERGED from [:package_info_plus] C:\untitled\build\package_info_plus\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
+MERGED from [:device_info_plus] C:\untitled\build\device_info_plus\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
+MERGED from [:device_info_plus] C:\untitled\build\device_info_plus\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [:location] C:\untitled\build\location\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [:location] C:\untitled\build\location\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [com.google.firebase:firebase-analytics-ktx:21.0.0] C:\Users\hamad\.gradle\caches\transforms-2\files-2.1\74007a0645c20c47a19ea27ad5d2d7fa\jetified-firebase-analytics-ktx-21.0.0\AndroidManifest.xml:5:5-44
@@ -484,8 +490,6 @@ MERGED from [androidx.constraintlayout:constraintlayout:2.0.1] C:\Users\hamad\.g
 MERGED from [androidx.constraintlayout:constraintlayout:2.0.1] C:\Users\hamad\.gradle\caches\transforms-2\files-2.1\607c9d768b07972f8ca14c49c8ae5c38\constraintlayout-2.0.1\AndroidManifest.xml:5:5-7:41
 MERGED from [androidx.appcompat:appcompat:1.2.0] C:\Users\hamad\.gradle\caches\transforms-2\files-2.1\08691a3ab1bf2ac661e07eb92eefdf5e\appcompat-1.2.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.appcompat:appcompat:1.2.0] C:\Users\hamad\.gradle\caches\transforms-2\files-2.1\08691a3ab1bf2ac661e07eb92eefdf5e\appcompat-1.2.0\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.core:core-ktx:1.3.2] C:\Users\hamad\.gradle\caches\transforms-2\files-2.1\dc119fe261fe106f7eb458a5d4928375\jetified-core-ktx-1.3.2\AndroidManifest.xml:5:5-7:41
-MERGED from [androidx.core:core-ktx:1.3.2] C:\Users\hamad\.gradle\caches\transforms-2\files-2.1\dc119fe261fe106f7eb458a5d4928375\jetified-core-ktx-1.3.2\AndroidManifest.xml:5:5-7:41
 MERGED from [androidx.exifinterface:exifinterface:1.3.0] C:\Users\hamad\.gradle\caches\transforms-2\files-2.1\c0359ed898300ffe0cfb5abf50f286bf\exifinterface-1.3.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.exifinterface:exifinterface:1.3.0] C:\Users\hamad\.gradle\caches\transforms-2\files-2.1\c0359ed898300ffe0cfb5abf50f286bf\exifinterface-1.3.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.legacy:legacy-support-v4:1.0.0] C:\Users\hamad\.gradle\caches\transforms-2\files-2.1\c23b1edba617b0d9913c5c8dc007670a\legacy-support-v4-1.0.0\AndroidManifest.xml:20:5-44
@@ -508,6 +512,8 @@ MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] C:\Users\hamad\.gr
 MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] C:\Users\hamad\.gradle\caches\transforms-2\files-2.1\a3ba356fc7aada0272b1a06a9cf5f5cf\legacy-support-core-utils-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\Users\hamad\.gradle\caches\transforms-2\files-2.1\59bdf741b9d071f8c4313c759bb9aa7e\localbroadcastmanager-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\Users\hamad\.gradle\caches\transforms-2\files-2.1\59bdf741b9d071f8c4313c759bb9aa7e\localbroadcastmanager-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.core:core-ktx:1.3.2] C:\Users\hamad\.gradle\caches\transforms-2\files-2.1\dc119fe261fe106f7eb458a5d4928375\jetified-core-ktx-1.3.2\AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.core:core-ktx:1.3.2] C:\Users\hamad\.gradle\caches\transforms-2\files-2.1\dc119fe261fe106f7eb458a5d4928375\jetified-core-ktx-1.3.2\AndroidManifest.xml:5:5-7:41
 MERGED from [com.google.firebase:firebase-components:17.0.0] C:\Users\hamad\.gradle\caches\transforms-2\files-2.1\1433f022cd77992daac33c5da491d193\jetified-firebase-components-17.0.0\AndroidManifest.xml:19:5-21:41
 MERGED from [com.google.firebase:firebase-components:17.0.0] C:\Users\hamad\.gradle\caches\transforms-2\files-2.1\1433f022cd77992daac33c5da491d193\jetified-firebase-components-17.0.0\AndroidManifest.xml:19:5-21:41
 MERGED from [androidx.media:media:1.1.0] C:\Users\hamad\.gradle\caches\transforms-2\files-2.1\04fbac0cd5b3e704424c7e550f8182d7\media-1.1.0\AndroidManifest.xml:20:5-22:41
@@ -534,12 +540,12 @@ MERGED from [com.google.android.gms:play-services-base:18.0.1] C:\Users\hamad\.g
 MERGED from [com.google.android.gms:play-services-base:18.0.1] C:\Users\hamad\.gradle\caches\transforms-2\files-2.1\21e499c6d4c07677055c1a95d93cf585\jetified-play-services-base-18.0.1\AndroidManifest.xml:18:5-43
 MERGED from [com.google.android.gms:play-services-places-placereport:17.0.0] C:\Users\hamad\.gradle\caches\transforms-2\files-2.1\bafd7d3a35650a4019cf0df8aaefdc05\jetified-play-services-places-placereport-17.0.0\AndroidManifest.xml:20:5-44
 MERGED from [com.google.android.gms:play-services-places-placereport:17.0.0] C:\Users\hamad\.gradle\caches\transforms-2\files-2.1\bafd7d3a35650a4019cf0df8aaefdc05\jetified-play-services-places-placereport-17.0.0\AndroidManifest.xml:20:5-44
-MERGED from [com.google.firebase:firebase-installations-interop:17.0.1] C:\Users\hamad\.gradle\caches\transforms-2\files-2.1\fd5e9693e33001f7c993b17800a4a4e9\jetified-firebase-installations-interop-17.0.1\AndroidManifest.xml:19:5-21:41
-MERGED from [com.google.firebase:firebase-installations-interop:17.0.1] C:\Users\hamad\.gradle\caches\transforms-2\files-2.1\fd5e9693e33001f7c993b17800a4a4e9\jetified-firebase-installations-interop-17.0.1\AndroidManifest.xml:19:5-21:41
 MERGED from [com.google.android.gms:play-services-cloud-messaging:17.0.1] C:\Users\hamad\.gradle\caches\transforms-2\files-2.1\1fd373e1299585b1a7e2dc950e606042\jetified-play-services-cloud-messaging-17.0.1\AndroidManifest.xml:5:5-44
 MERGED from [com.google.android.gms:play-services-cloud-messaging:17.0.1] C:\Users\hamad\.gradle\caches\transforms-2\files-2.1\1fd373e1299585b1a7e2dc950e606042\jetified-play-services-cloud-messaging-17.0.1\AndroidManifest.xml:5:5-44
 MERGED from [com.google.firebase:firebase-iid-interop:17.1.0] C:\Users\hamad\.gradle\caches\transforms-2\files-2.1\640170a7db9aeca8e0c1f04b6fc84c91\jetified-firebase-iid-interop-17.1.0\AndroidManifest.xml:5:5-44
 MERGED from [com.google.firebase:firebase-iid-interop:17.1.0] C:\Users\hamad\.gradle\caches\transforms-2\files-2.1\640170a7db9aeca8e0c1f04b6fc84c91\jetified-firebase-iid-interop-17.1.0\AndroidManifest.xml:5:5-44
+MERGED from [com.google.firebase:firebase-installations-interop:17.0.1] C:\Users\hamad\.gradle\caches\transforms-2\files-2.1\fd5e9693e33001f7c993b17800a4a4e9\jetified-firebase-installations-interop-17.0.1\AndroidManifest.xml:19:5-21:41
+MERGED from [com.google.firebase:firebase-installations-interop:17.0.1] C:\Users\hamad\.gradle\caches\transforms-2\files-2.1\fd5e9693e33001f7c993b17800a4a4e9\jetified-firebase-installations-interop-17.0.1\AndroidManifest.xml:19:5-21:41
 MERGED from [com.google.android.gms:play-services-tasks:18.0.1] C:\Users\hamad\.gradle\caches\transforms-2\files-2.1\119330ea3cb8474530daed4e0df2d30d\jetified-play-services-tasks-18.0.1\AndroidManifest.xml:4:5-43
 MERGED from [com.google.android.gms:play-services-tasks:18.0.1] C:\Users\hamad\.gradle\caches\transforms-2\files-2.1\119330ea3cb8474530daed4e0df2d30d\jetified-play-services-tasks-18.0.1\AndroidManifest.xml:4:5-43
 MERGED from [com.google.firebase:firebase-measurement-connector:19.0.0] C:\Users\hamad\.gradle\caches\transforms-2\files-2.1\855d53a6b92ca52e0387edb731f6ad13\jetified-firebase-measurement-connector-19.0.0\AndroidManifest.xml:20:5-44
@@ -632,6 +638,8 @@ INJECTED from C:\untitled\android\app\src\debug\AndroidManifest.xml
 		INJECTED from C:\untitled\android\app\src\debug\AndroidManifest.xml
 service#com.google.firebase.components.ComponentDiscoveryService
 ADDED from [:firebase_database] C:\untitled\build\firebase_database\intermediates\library_manifest\debug\AndroidManifest.xml:8:9-12:19
+MERGED from [:firebase_messaging] C:\untitled\build\firebase_messaging\intermediates\library_manifest\debug\AndroidManifest.xml:33:9-37:19
+MERGED from [:firebase_messaging] C:\untitled\build\firebase_messaging\intermediates\library_manifest\debug\AndroidManifest.xml:33:9-37:19
 MERGED from [:firebase_performance] C:\untitled\build\firebase_performance\intermediates\library_manifest\debug\AndroidManifest.xml:10:9-14:19
 MERGED from [:firebase_performance] C:\untitled\build\firebase_performance\intermediates\library_manifest\debug\AndroidManifest.xml:10:9-14:19
 MERGED from [:cloud_firestore] C:\untitled\build\cloud_firestore\intermediates\library_manifest\debug\AndroidManifest.xml:8:9-12:19
@@ -640,8 +648,6 @@ MERGED from [:firebase_auth] C:\untitled\build\firebase_auth\intermediates\libra
 MERGED from [:firebase_auth] C:\untitled\build\firebase_auth\intermediates\library_manifest\debug\AndroidManifest.xml:8:9-12:19
 MERGED from [:firebase_storage] C:\untitled\build\firebase_storage\intermediates\library_manifest\debug\AndroidManifest.xml:8:9-12:19
 MERGED from [:firebase_storage] C:\untitled\build\firebase_storage\intermediates\library_manifest\debug\AndroidManifest.xml:8:9-12:19
-MERGED from [:firebase_messaging] C:\untitled\build\firebase_messaging\intermediates\library_manifest\debug\AndroidManifest.xml:33:9-37:19
-MERGED from [:firebase_messaging] C:\untitled\build\firebase_messaging\intermediates\library_manifest\debug\AndroidManifest.xml:33:9-37:19
 MERGED from [:firebase_core] C:\untitled\build\firebase_core\intermediates\library_manifest\debug\AndroidManifest.xml:8:9-12:19
 MERGED from [:firebase_core] C:\untitled\build\firebase_core\intermediates\library_manifest\debug\AndroidManifest.xml:8:9-12:19
 MERGED from [com.google.firebase:firebase-analytics-ktx:21.0.0] C:\Users\hamad\.gradle\caches\transforms-2\files-2.1\74007a0645c20c47a19ea27ad5d2d7fa\jetified-firebase-analytics-ktx-21.0.0\AndroidManifest.xml:8:9-14:19
@@ -686,30 +692,6 @@ ADDED from [:firebase_database] C:\untitled\build\firebase_database\intermediate
 		ADDED from [:firebase_database] C:\untitled\build\firebase_database\intermediates\library_manifest\debug\AndroidManifest.xml:11:17-82
 	android:name
 		ADDED from [:firebase_database] C:\untitled\build\firebase_database\intermediates\library_manifest\debug\AndroidManifest.xml:10:17-127
-meta-data#com.google.firebase.components:io.flutter.plugins.firebase.performance.FlutterFirebaseAppRegistrar
-ADDED from [:firebase_performance] C:\untitled\build\firebase_performance\intermediates\library_manifest\debug\AndroidManifest.xml:11:13-13:85
-	android:value
-		ADDED from [:firebase_performance] C:\untitled\build\firebase_performance\intermediates\library_manifest\debug\AndroidManifest.xml:13:17-82
-	android:name
-		ADDED from [:firebase_performance] C:\untitled\build\firebase_performance\intermediates\library_manifest\debug\AndroidManifest.xml:12:17-130
-meta-data#com.google.firebase.components:io.flutter.plugins.firebase.firestore.FlutterFirebaseFirestoreRegistrar
-ADDED from [:cloud_firestore] C:\untitled\build\cloud_firestore\intermediates\library_manifest\debug\AndroidManifest.xml:9:13-11:85
-	android:value
-		ADDED from [:cloud_firestore] C:\untitled\build\cloud_firestore\intermediates\library_manifest\debug\AndroidManifest.xml:11:17-82
-	android:name
-		ADDED from [:cloud_firestore] C:\untitled\build\cloud_firestore\intermediates\library_manifest\debug\AndroidManifest.xml:10:17-134
-meta-data#com.google.firebase.components:io.flutter.plugins.firebase.auth.FlutterFirebaseAuthRegistrar
-ADDED from [:firebase_auth] C:\untitled\build\firebase_auth\intermediates\library_manifest\debug\AndroidManifest.xml:9:13-11:85
-	android:value
-		ADDED from [:firebase_auth] C:\untitled\build\firebase_auth\intermediates\library_manifest\debug\AndroidManifest.xml:11:17-82
-	android:name
-		ADDED from [:firebase_auth] C:\untitled\build\firebase_auth\intermediates\library_manifest\debug\AndroidManifest.xml:10:17-124
-meta-data#com.google.firebase.components:io.flutter.plugins.firebase.storage.FlutterFirebaseAppRegistrar
-ADDED from [:firebase_storage] C:\untitled\build\firebase_storage\intermediates\library_manifest\debug\AndroidManifest.xml:9:13-11:85
-	android:value
-		ADDED from [:firebase_storage] C:\untitled\build\firebase_storage\intermediates\library_manifest\debug\AndroidManifest.xml:11:17-82
-	android:name
-		ADDED from [:firebase_storage] C:\untitled\build\firebase_storage\intermediates\library_manifest\debug\AndroidManifest.xml:10:17-126
 uses-permission#android.permission.WAKE_LOCK
 ADDED from [:firebase_messaging] C:\untitled\build\firebase_messaging\intermediates\library_manifest\debug\AndroidManifest.xml:8:5-68
 MERGED from [:flutter_background] C:\untitled\build\flutter_background\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-68
@@ -814,6 +796,30 @@ ADDED from [:firebase_messaging] C:\untitled\build\firebase_messaging\intermedia
 		ADDED from [:firebase_messaging] C:\untitled\build\firebase_messaging\intermediates\library_manifest\debug\AndroidManifest.xml:43:13-35
 	android:name
 		ADDED from [:firebase_messaging] C:\untitled\build\firebase_messaging\intermediates\library_manifest\debug\AndroidManifest.xml:40:13-102
+meta-data#com.google.firebase.components:io.flutter.plugins.firebase.performance.FlutterFirebaseAppRegistrar
+ADDED from [:firebase_performance] C:\untitled\build\firebase_performance\intermediates\library_manifest\debug\AndroidManifest.xml:11:13-13:85
+	android:value
+		ADDED from [:firebase_performance] C:\untitled\build\firebase_performance\intermediates\library_manifest\debug\AndroidManifest.xml:13:17-82
+	android:name
+		ADDED from [:firebase_performance] C:\untitled\build\firebase_performance\intermediates\library_manifest\debug\AndroidManifest.xml:12:17-130
+meta-data#com.google.firebase.components:io.flutter.plugins.firebase.firestore.FlutterFirebaseFirestoreRegistrar
+ADDED from [:cloud_firestore] C:\untitled\build\cloud_firestore\intermediates\library_manifest\debug\AndroidManifest.xml:9:13-11:85
+	android:value
+		ADDED from [:cloud_firestore] C:\untitled\build\cloud_firestore\intermediates\library_manifest\debug\AndroidManifest.xml:11:17-82
+	android:name
+		ADDED from [:cloud_firestore] C:\untitled\build\cloud_firestore\intermediates\library_manifest\debug\AndroidManifest.xml:10:17-134
+meta-data#com.google.firebase.components:io.flutter.plugins.firebase.auth.FlutterFirebaseAuthRegistrar
+ADDED from [:firebase_auth] C:\untitled\build\firebase_auth\intermediates\library_manifest\debug\AndroidManifest.xml:9:13-11:85
+	android:value
+		ADDED from [:firebase_auth] C:\untitled\build\firebase_auth\intermediates\library_manifest\debug\AndroidManifest.xml:11:17-82
+	android:name
+		ADDED from [:firebase_auth] C:\untitled\build\firebase_auth\intermediates\library_manifest\debug\AndroidManifest.xml:10:17-124
+meta-data#com.google.firebase.components:io.flutter.plugins.firebase.storage.FlutterFirebaseAppRegistrar
+ADDED from [:firebase_storage] C:\untitled\build\firebase_storage\intermediates\library_manifest\debug\AndroidManifest.xml:9:13-11:85
+	android:value
+		ADDED from [:firebase_storage] C:\untitled\build\firebase_storage\intermediates\library_manifest\debug\AndroidManifest.xml:11:17-82
+	android:name
+		ADDED from [:firebase_storage] C:\untitled\build\firebase_storage\intermediates\library_manifest\debug\AndroidManifest.xml:10:17-126
 meta-data#com.google.firebase.components:io.flutter.plugins.firebase.core.FlutterFirebaseCoreRegistrar
 ADDED from [:firebase_core] C:\untitled\build\firebase_core\intermediates\library_manifest\debug\AndroidManifest.xml:9:13-11:85
 	android:value
@@ -830,58 +836,6 @@ ADDED from [:geolocator_android] C:\untitled\build\geolocator_android\intermedia
 		ADDED from [:geolocator_android] C:\untitled\build\geolocator_android\intermediates\library_manifest\debug\AndroidManifest.xml:14:13-53
 	android:name
 		ADDED from [:geolocator_android] C:\untitled\build\geolocator_android\intermediates\library_manifest\debug\AndroidManifest.xml:11:13-77
-uses-permission#android.permission.READ_EXTERNAL_STORAGE
-ADDED from [:file_picker] C:\untitled\build\file_picker\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-80
-	android:name
-		ADDED from [:file_picker] C:\untitled\build\file_picker\intermediates\library_manifest\debug\AndroidManifest.xml:7:22-77
-queries
-ADDED from [:file_picker] C:\untitled\build\file_picker\intermediates\library_manifest\debug\AndroidManifest.xml:9:5-15:15
-MERGED from [:map_launcher] C:\untitled\build\map_launcher\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-23:15
-MERGED from [:map_launcher] C:\untitled\build\map_launcher\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-23:15
-MERGED from [com.google.android.gms:play-services-maps:18.0.2] C:\Users\hamad\.gradle\caches\transforms-2\files-2.1\3bb31713e7c370fbaa9bef5c8544f515\jetified-play-services-maps-18.0.2\AndroidManifest.xml:30:5-34:15
-MERGED from [com.google.android.gms:play-services-maps:18.0.2] C:\Users\hamad\.gradle\caches\transforms-2\files-2.1\3bb31713e7c370fbaa9bef5c8544f515\jetified-play-services-maps-18.0.2\AndroidManifest.xml:30:5-34:15
-intent#action:name:android.intent.action.GET_CONTENT+data:mimeType:*/*
-ADDED from [:file_picker] C:\untitled\build\file_picker\intermediates\library_manifest\debug\AndroidManifest.xml:10:9-14:18
-action#android.intent.action.GET_CONTENT
-ADDED from [:file_picker] C:\untitled\build\file_picker\intermediates\library_manifest\debug\AndroidManifest.xml:11:13-72
-	android:name
-		ADDED from [:file_picker] C:\untitled\build\file_picker\intermediates\library_manifest\debug\AndroidManifest.xml:11:21-69
-data
-ADDED from [:file_picker] C:\untitled\build\file_picker\intermediates\library_manifest\debug\AndroidManifest.xml:13:13-44
-	android:mimeType
-		ADDED from [:file_picker] C:\untitled\build\file_picker\intermediates\library_manifest\debug\AndroidManifest.xml:13:19-41
-uses-permission#android.permission.CAMERA
-ADDED from [:flutter_barcode_scanner] C:\untitled\build\flutter_barcode_scanner\intermediates\library_manifest\debug\AndroidManifest.xml:9:5-65
-	android:name
-		ADDED from [:flutter_barcode_scanner] C:\untitled\build\flutter_barcode_scanner\intermediates\library_manifest\debug\AndroidManifest.xml:9:22-62
-uses-feature#android.hardware.camera
-ADDED from [:flutter_barcode_scanner] C:\untitled\build\flutter_barcode_scanner\intermediates\library_manifest\debug\AndroidManifest.xml:11:5-60
-	android:name
-		ADDED from [:flutter_barcode_scanner] C:\untitled\build\flutter_barcode_scanner\intermediates\library_manifest\debug\AndroidManifest.xml:11:19-57
-uses-permission#android.permission.FLASHLIGHT
-ADDED from [:flutter_barcode_scanner] C:\untitled\build\flutter_barcode_scanner\intermediates\library_manifest\debug\AndroidManifest.xml:13:5-69
-	android:name
-		ADDED from [:flutter_barcode_scanner] C:\untitled\build\flutter_barcode_scanner\intermediates\library_manifest\debug\AndroidManifest.xml:13:22-66
-activity#com.amolg.flutterbarcodescanner.BarcodeCaptureActivity
-ADDED from [:flutter_barcode_scanner] C:\untitled\build\flutter_barcode_scanner\intermediates\library_manifest\debug\AndroidManifest.xml:18:9-91
-	android:name
-		ADDED from [:flutter_barcode_scanner] C:\untitled\build\flutter_barcode_scanner\intermediates\library_manifest\debug\AndroidManifest.xml:18:19-88
-provider#io.flutter.plugins.imagepicker.ImagePickerFileProvider
-ADDED from [:image_picker_android] C:\untitled\build\image_picker_android\intermediates\library_manifest\debug\AndroidManifest.xml:8:9-16:20
-	android:grantUriPermissions
-		ADDED from [:image_picker_android] C:\untitled\build\image_picker_android\intermediates\library_manifest\debug\AndroidManifest.xml:12:13-47
-	android:authorities
-		ADDED from [:image_picker_android] C:\untitled\build\image_picker_android\intermediates\library_manifest\debug\AndroidManifest.xml:10:13-74
-	android:exported
-		ADDED from [:image_picker_android] C:\untitled\build\image_picker_android\intermediates\library_manifest\debug\AndroidManifest.xml:11:13-37
-	android:name
-		ADDED from [:image_picker_android] C:\untitled\build\image_picker_android\intermediates\library_manifest\debug\AndroidManifest.xml:9:13-82
-meta-data#android.support.FILE_PROVIDER_PATHS
-ADDED from [:image_picker_android] C:\untitled\build\image_picker_android\intermediates\library_manifest\debug\AndroidManifest.xml:13:13-15:75
-	android:resource
-		ADDED from [:image_picker_android] C:\untitled\build\image_picker_android\intermediates\library_manifest\debug\AndroidManifest.xml:15:17-72
-	android:name
-		ADDED from [:image_picker_android] C:\untitled\build\image_picker_android\intermediates\library_manifest\debug\AndroidManifest.xml:14:17-67
 uses-permission#android.permission.RECEIVE_BOOT_COMPLETED
 ADDED from [:flutter_local_notifications] C:\untitled\build\flutter_local_notifications\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-81
 	android:name
@@ -928,14 +882,42 @@ action#com.htc.intent.action.QUICKBOOT_POWERON
 ADDED from [:flutter_local_notifications] C:\untitled\build\flutter_local_notifications\intermediates\library_manifest\debug\AndroidManifest.xml:23:17-82
 	android:name
 		ADDED from [:flutter_local_notifications] C:\untitled\build\flutter_local_notifications\intermediates\library_manifest\debug\AndroidManifest.xml:23:25-79
-activity#io.flutter.plugins.urllauncher.WebViewActivity
-ADDED from [:url_launcher_android] C:\untitled\build\url_launcher_android\intermediates\library_manifest\debug\AndroidManifest.xml:8:9-11:74
-	android:exported
-		ADDED from [:url_launcher_android] C:\untitled\build\url_launcher_android\intermediates\library_manifest\debug\AndroidManifest.xml:10:13-37
-	android:theme
-		ADDED from [:url_launcher_android] C:\untitled\build\url_launcher_android\intermediates\library_manifest\debug\AndroidManifest.xml:11:13-71
+uses-permission#android.permission.READ_EXTERNAL_STORAGE
+ADDED from [:file_picker] C:\untitled\build\file_picker\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-80
 	android:name
-		ADDED from [:url_launcher_android] C:\untitled\build\url_launcher_android\intermediates\library_manifest\debug\AndroidManifest.xml:9:13-74
+		ADDED from [:file_picker] C:\untitled\build\file_picker\intermediates\library_manifest\debug\AndroidManifest.xml:7:22-77
+queries
+ADDED from [:file_picker] C:\untitled\build\file_picker\intermediates\library_manifest\debug\AndroidManifest.xml:9:5-15:15
+MERGED from [:map_launcher] C:\untitled\build\map_launcher\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-23:15
+MERGED from [:map_launcher] C:\untitled\build\map_launcher\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-23:15
+MERGED from [com.google.android.gms:play-services-maps:18.0.2] C:\Users\hamad\.gradle\caches\transforms-2\files-2.1\3bb31713e7c370fbaa9bef5c8544f515\jetified-play-services-maps-18.0.2\AndroidManifest.xml:30:5-34:15
+MERGED from [com.google.android.gms:play-services-maps:18.0.2] C:\Users\hamad\.gradle\caches\transforms-2\files-2.1\3bb31713e7c370fbaa9bef5c8544f515\jetified-play-services-maps-18.0.2\AndroidManifest.xml:30:5-34:15
+intent#action:name:android.intent.action.GET_CONTENT+data:mimeType:*/*
+ADDED from [:file_picker] C:\untitled\build\file_picker\intermediates\library_manifest\debug\AndroidManifest.xml:10:9-14:18
+action#android.intent.action.GET_CONTENT
+ADDED from [:file_picker] C:\untitled\build\file_picker\intermediates\library_manifest\debug\AndroidManifest.xml:11:13-72
+	android:name
+		ADDED from [:file_picker] C:\untitled\build\file_picker\intermediates\library_manifest\debug\AndroidManifest.xml:11:21-69
+data
+ADDED from [:file_picker] C:\untitled\build\file_picker\intermediates\library_manifest\debug\AndroidManifest.xml:13:13-44
+	android:mimeType
+		ADDED from [:file_picker] C:\untitled\build\file_picker\intermediates\library_manifest\debug\AndroidManifest.xml:13:19-41
+uses-permission#android.permission.CAMERA
+ADDED from [:flutter_barcode_scanner] C:\untitled\build\flutter_barcode_scanner\intermediates\library_manifest\debug\AndroidManifest.xml:9:5-65
+	android:name
+		ADDED from [:flutter_barcode_scanner] C:\untitled\build\flutter_barcode_scanner\intermediates\library_manifest\debug\AndroidManifest.xml:9:22-62
+uses-feature#android.hardware.camera
+ADDED from [:flutter_barcode_scanner] C:\untitled\build\flutter_barcode_scanner\intermediates\library_manifest\debug\AndroidManifest.xml:11:5-60
+	android:name
+		ADDED from [:flutter_barcode_scanner] C:\untitled\build\flutter_barcode_scanner\intermediates\library_manifest\debug\AndroidManifest.xml:11:19-57
+uses-permission#android.permission.FLASHLIGHT
+ADDED from [:flutter_barcode_scanner] C:\untitled\build\flutter_barcode_scanner\intermediates\library_manifest\debug\AndroidManifest.xml:13:5-69
+	android:name
+		ADDED from [:flutter_barcode_scanner] C:\untitled\build\flutter_barcode_scanner\intermediates\library_manifest\debug\AndroidManifest.xml:13:22-66
+activity#com.amolg.flutterbarcodescanner.BarcodeCaptureActivity
+ADDED from [:flutter_barcode_scanner] C:\untitled\build\flutter_barcode_scanner\intermediates\library_manifest\debug\AndroidManifest.xml:18:9-91
+	android:name
+		ADDED from [:flutter_barcode_scanner] C:\untitled\build\flutter_barcode_scanner\intermediates\library_manifest\debug\AndroidManifest.xml:18:19-88
 service#de.julianassmann.flutter_background.IsolateHolderService
 ADDED from [:flutter_background] C:\untitled\build\flutter_background\intermediates\library_manifest\debug\AndroidManifest.xml:11:9-17:19
 	android:name
@@ -1002,6 +984,30 @@ package#com.huawei.maps.app
 ADDED from [:map_launcher] C:\untitled\build\map_launcher\intermediates\library_manifest\debug\AndroidManifest.xml:22:9-55
 	android:name
 		ADDED from [:map_launcher] C:\untitled\build\map_launcher\intermediates\library_manifest\debug\AndroidManifest.xml:22:18-52
+provider#io.flutter.plugins.imagepicker.ImagePickerFileProvider
+ADDED from [:image_picker_android] C:\untitled\build\image_picker_android\intermediates\library_manifest\debug\AndroidManifest.xml:8:9-16:20
+	android:grantUriPermissions
+		ADDED from [:image_picker_android] C:\untitled\build\image_picker_android\intermediates\library_manifest\debug\AndroidManifest.xml:12:13-47
+	android:authorities
+		ADDED from [:image_picker_android] C:\untitled\build\image_picker_android\intermediates\library_manifest\debug\AndroidManifest.xml:10:13-74
+	android:exported
+		ADDED from [:image_picker_android] C:\untitled\build\image_picker_android\intermediates\library_manifest\debug\AndroidManifest.xml:11:13-37
+	android:name
+		ADDED from [:image_picker_android] C:\untitled\build\image_picker_android\intermediates\library_manifest\debug\AndroidManifest.xml:9:13-82
+meta-data#android.support.FILE_PROVIDER_PATHS
+ADDED from [:image_picker_android] C:\untitled\build\image_picker_android\intermediates\library_manifest\debug\AndroidManifest.xml:13:13-15:75
+	android:resource
+		ADDED from [:image_picker_android] C:\untitled\build\image_picker_android\intermediates\library_manifest\debug\AndroidManifest.xml:15:17-72
+	android:name
+		ADDED from [:image_picker_android] C:\untitled\build\image_picker_android\intermediates\library_manifest\debug\AndroidManifest.xml:14:17-67
+activity#io.flutter.plugins.urllauncher.WebViewActivity
+ADDED from [:url_launcher_android] C:\untitled\build\url_launcher_android\intermediates\library_manifest\debug\AndroidManifest.xml:8:9-11:74
+	android:exported
+		ADDED from [:url_launcher_android] C:\untitled\build\url_launcher_android\intermediates\library_manifest\debug\AndroidManifest.xml:10:13-37
+	android:theme
+		ADDED from [:url_launcher_android] C:\untitled\build\url_launcher_android\intermediates\library_manifest\debug\AndroidManifest.xml:11:13-71
+	android:name
+		ADDED from [:url_launcher_android] C:\untitled\build\url_launcher_android\intermediates\library_manifest\debug\AndroidManifest.xml:9:13-74
 uses-permission#android.permission.ACCESS_COARSE_LOCATION
 ADDED from [:location] C:\untitled\build\location\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-81
 	android:name

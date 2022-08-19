@@ -27,12 +27,14 @@ environment:
 # the latest version available on pub.dev. To see which dependencies have newer
 # versions available, run `flutter pub outdated`.
 dependencies:
+  action_slider: ^0.6.0
   address_search_field: ^4.0.1
   alert_dialog: ^1.0.1
   auto_size_text: ^3.0.0
   cloud_firestore: ^3.1.9
   cupertino_icons: ^1.0.4
   dropdown_button2: ^1.1.1
+  email_validator: ^2.1.17
   file_picker: ^4.5.1
   firebase_auth: ^3.3.8
   firebase_core: ^1.12.0
@@ -50,31 +52,43 @@ dependencies:
   flutter_bounceable: ^1.0.2
   flutter_chat_ui: ^1.5.8
   flutter_dropdown_alert: ^1.0.4
+  flutter_intro: ^3.0.2
   flutter_local_notifications: ^9.5.3+1
+  flutter_localizations:
+    sdk: flutter
   flutter_multi_select_items: ^0.4.0
   flutter_neumorphic: ^3.2.0
   flutter_polyline_points: ^1.0.0
   flutter_svg: ^1.0.3
+  flutter_widget_from_html_core: ^0.8.5+3
   fluttertoast: ^8.0.9
   font_awesome_flutter: ^10.1.0
 
+  fwfh_selectable_text: ^0.8.3+1
   geocoding: ^2.0.4
   geoflutterfire: ^3.0.3
   geolocator: ^8.2.0
   google_fonts: ^2.3.0
   google_maps_flutter: ^2.1.5
   group_button: ^5.0.0
+  hive_flutter: ^1.1.0
+  http: ^0.13.4
   image_picker: ^0.8.5
   intl: ^0.17.0
+  intro_screen_onboarding_flutter: ^1.0.0
   location: ^4.0.0
   map_launcher: ^2.2.2
+  matomo_tracker: ^1.1.2
   modal_bottom_sheet: ^2.0.1
   modal_progress_hud: ^0.1.3
   multi_select_flutter: ^4.1.2
   openfoodfacts: ^1.17.0
+  percent_indicator: ^4.2.2
   profanity_filter: ^2.0.0
+  provider: ^6.0.3
   shared_preferences: ^2.0.13
   swipe_image_gallery: ^0.5.1
+  url_launcher: ^6.1.2
   uuid: ^3.0.6
 
 
@@ -136,3 +150,30 @@ flutter:
     - family: Barjiah
       fonts:
         - asset: assets/fonts/Barjiah.otf
+    - family: cbold
+      fonts:
+        - asset: assets/fonts/cbold.otf
+
+    - family: cextrabold
+      fonts:
+        - asset: assets/fonts/cextrabold.otf
+
+    - family: clight
+      fonts:
+        - asset: assets/fonts/clight.otf
+
+    - family: cmedium
+      fonts:
+        - asset: assets/fonts/cmedium.otf
+
+    - family: cregular
+      fonts:
+        - asset: assets/fonts/cregular.otf
+
+    - family: csemi
+      fonts:
+        - asset: assets/fonts/csemi.otf
+
+    - family: cthin
+      fonts:
+        - asset: assets/fonts/cthin.otf

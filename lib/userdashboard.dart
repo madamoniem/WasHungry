@@ -1,6 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter_bounceable/flutter_bounceable.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
@@ -14,8 +13,6 @@ import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:washungrystable/customwidgets.dart';
 import 'package:washungrystable/give_process/scanFood.dart';
-import 'package:washungrystable/give_process/searchFood.dart';
-import 'package:washungrystable/test.dart';
 import 'package:washungrystable/get_process/maps.dart';
 import 'package:washungrystable/load_nearby_donations.dart';
 import 'package:washungrystable/give_process/add_info.dart';
@@ -227,7 +224,7 @@ class _UserDashboardState extends State<UserDashboard>
         child: Padding(
           padding: const EdgeInsets.only(
             left: 30,
-            top: 30,
+            top: 50,
             right: 30,
           ),
           child: ListView(
@@ -239,7 +236,7 @@ class _UserDashboardState extends State<UserDashboard>
                 style: TextStyle(
                   color: CustomColors.textColor,
                   fontFamily: "RecoletaB",
-                  fontSize: 60,
+                  fontSize: 50,
                   fontWeight: FontWeight.bold,
                 ),
               ),
@@ -304,19 +301,18 @@ class _UserDashboardState extends State<UserDashboard>
                                       ),
                                     ),
                                     const SizedBox(
-                                      height: 5,
+                                      height: 10,
                                     ),
                                     GestureDetector(
                                       onTap: () {
                                         Navigator.of(context).push(
                                           MaterialPageRoute(
-                                            builder: (context) =>
-                                                const SearchFood(),
+                                            builder: (context) => AddInfo(),
                                           ),
                                         );
                                       },
                                       child: AutoSizeText(
-                                        "Search item",
+                                        "Manually enter item",
                                         maxLines: 1,
                                         style: GoogleFonts.poppins(
                                           color: CustomColors.textColor,
@@ -326,7 +322,7 @@ class _UserDashboardState extends State<UserDashboard>
                                       ),
                                     ),
                                     const SizedBox(
-                                      height: 20,
+                                      height: 50,
                                     ),
                                   ],
                                 ),
@@ -351,25 +347,13 @@ class _UserDashboardState extends State<UserDashboard>
                           ],
                         ),
                       ),
-                      child: Neumorphic(
-                        style: NeumorphicStyle(
-                          shape: NeumorphicShape.convex,
-                          depth: 20,
-                          surfaceIntensity: 1,
-                          boxShape: NeumorphicBoxShape.roundRect(
-                            BorderRadius.circular(12),
-                          ),
-                          lightSource: LightSource.topLeft,
-                          color: const Color(0xff6c5ce7),
-                        ),
-                        child: Center(
-                          child: Text(
-                            'Give',
-                            style: GoogleFonts.poppins(
-                              color: Colors.white,
-                              fontSize: 35,
-                              fontWeight: FontWeight.w400,
-                            ),
+                      child: Center(
+                        child: Text(
+                          'Give',
+                          style: GoogleFonts.poppins(
+                            color: Colors.white,
+                            fontSize: 35,
+                            fontWeight: FontWeight.w400,
                           ),
                         ),
                       ),
@@ -398,25 +382,13 @@ class _UserDashboardState extends State<UserDashboard>
                           ],
                         ),
                       ),
-                      child: Neumorphic(
-                        style: NeumorphicStyle(
-                          shape: NeumorphicShape.convex,
-                          depth: 20,
-                          surfaceIntensity: 1,
-                          boxShape: NeumorphicBoxShape.roundRect(
-                            BorderRadius.circular(12),
-                          ),
-                          lightSource: LightSource.topLeft,
-                          color: const Color(0xffe17055),
-                        ),
-                        child: Center(
-                          child: Text(
-                            'Get',
-                            style: GoogleFonts.poppins(
-                              color: Colors.white,
-                              fontSize: 35,
-                              fontWeight: FontWeight.w400,
-                            ),
+                      child: Center(
+                        child: Text(
+                          'Get',
+                          style: GoogleFonts.poppins(
+                            color: Colors.white,
+                            fontSize: 35,
+                            fontWeight: FontWeight.w400,
                           ),
                         ),
                       ),
@@ -425,14 +397,14 @@ class _UserDashboardState extends State<UserDashboard>
                 ],
               ),
               const SizedBox(
-                height: 30,
+                height: 35,
               ),
               Text(
                 'Stats',
                 style: TextStyle(
                   color: CustomColors.textColor,
                   fontFamily: "Recoleta",
-                  fontSize: 50,
+                  fontSize: 40,
                   fontWeight: FontWeight.bold,
                 ),
               ),

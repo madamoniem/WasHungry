@@ -7,7 +7,6 @@ import 'package:openfoodfacts/model/NutrientLevels.dart';
 import 'package:openfoodfacts/openfoodfacts.dart';
 import 'package:swipe_image_gallery/swipe_image_gallery.dart';
 import 'package:washungrystable/customwidgets.dart';
-import 'package:washungrystable/give_process/searchFood.dart';
 
 class ScanFood extends StatefulWidget {
   const ScanFood({Key? key}) : super(key: key);
@@ -888,42 +887,6 @@ class _ScanFoodState extends State<ScanFood> {
                                         padding: const EdgeInsets.all(15.0),
                                         child: Text(
                                           'Scan Again',
-                                          style: GoogleFonts.poppins(
-                                            color: Colors.white,
-                                            fontSize: 15,
-                                          ),
-                                        ),
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                              ),
-                              Padding(
-                                padding: const EdgeInsets.only(bottom: 10),
-                                child: SizedBox(
-                                  child: ButtonTheme(
-                                    child: ElevatedButton(
-                                      onPressed: () {
-                                        Navigator.of(context).push(
-                                          MaterialPageRoute(
-                                            builder: (context) =>
-                                                const SearchFood(),
-                                          ),
-                                        );
-                                      },
-                                      style: ElevatedButton.styleFrom(
-                                        primary: CustomColors.primary,
-                                        onPrimary: CustomColors.primary,
-                                        elevation: 0,
-                                        shape: RoundedRectangleBorder(
-                                          borderRadius:
-                                              BorderRadius.circular(40.0),
-                                        ),
-                                      ),
-                                      child: Padding(
-                                        padding: const EdgeInsets.all(15.0),
-                                        child: Text(
-                                          'Search Product',
                                           style: GoogleFonts.poppins(
                                             color: Colors.white,
                                             fontSize: 15,
