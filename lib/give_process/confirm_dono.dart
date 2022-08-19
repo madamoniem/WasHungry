@@ -14,6 +14,7 @@ import 'package:intl/intl.dart';
 import 'package:uuid/uuid.dart';
 import 'package:washungrystable/customwidgets.dart';
 import 'package:washungrystable/give_process/add_location.dart';
+import 'package:washungrystable/give_process/congrats.dart';
 import 'package:washungrystable/storage.dart';
 import 'package:washungrystable/userdashboard.dart' as user_dashboard;
 import 'package:washungrystable/give_process/add_info.dart' as add_info;
@@ -399,174 +400,184 @@ class _ConfirmDonoState extends State<ConfirmDono> {
               //     ),
               //   ),
               // ),
-              ActionSlider.standard(
-                boxShadow: [],
-                sliderBehavior: SliderBehavior.stretch,
-                rolling: true,
-                height: 70,
-                child: Text(
-                  'Swipe right to confirm',
-                  style: GoogleFonts.poppins(
-                    fontWeight: FontWeight.w600,
-                    color: Colors.white,
+              Align(
+                alignment: Alignment.bottomRight,
+                child: ActionSlider.standard(
+                  boxShadow: [],
+                  sliderBehavior: SliderBehavior.stretch,
+                  rolling: true,
+                  height: 70,
+                  child: Text(
+                    'Swipe right to confirm',
+                    style: GoogleFonts.poppins(
+                      fontWeight: FontWeight.w600,
+                      color: const Color(0xfff5f5f5),
+                    ),
                   ),
-                ),
-                backgroundColor: CustomColors.textColor,
-                toggleColor: CustomColors.primary,
-                iconAlignment: Alignment.centerRight,
-                loadingIcon: const SizedBox(
-                  width: 55,
-                  child: Center(
-                    child: SizedBox(
-                      width: 24.0,
-                      height: 24.0,
-                      child: CircularProgressIndicator(
-                        strokeWidth: 2.0,
-                        color: Colors.red,
+                  backgroundColor: CustomColors.textColor,
+                  toggleColor: CustomColors.primary,
+                  iconAlignment: Alignment.centerRight,
+                  loadingIcon: const SizedBox(
+                    width: 55,
+                    child: Center(
+                      child: SizedBox(
+                        width: 24.0,
+                        height: 24.0,
+                        child: CircularProgressIndicator(
+                          strokeWidth: 2.0,
+                          color: Colors.white,
+                        ),
                       ),
                     ),
                   ),
-                ),
-                successIcon: const SizedBox(
-                  width: 55,
-                  child: Center(
-                    child: Icon(Icons.check_rounded),
+                  successIcon: const SizedBox(
+                    width: 55,
+                    child: Center(
+                      child: Icon(Icons.check_rounded),
+                    ),
                   ),
-                ),
-                icon: const SizedBox(
-                  width: 55,
-                  child: Center(
-                    child: Icon(Icons.refresh_rounded, color: Colors.white),
+                  icon: const SizedBox(
+                    width: 55,
+                    child: Center(
+                      child: Icon(Icons.refresh_rounded, color: Colors.white),
+                    ),
                   ),
-                ),
-                action: (controller) async {
-                  controller.loading();
-                  setState(() {
-                    myLocation = geo.point(
-                      latitude: user_dashboard.latitude!.toDouble(),
-                      longitude: user_dashboard.longitude!.toDouble(),
-                    );
-                  });
-                  if (add_location.isEnabled) {
-                    deliverySentence =
-                        'Deliver withen ${add_location.disNum.text} miles of ${user_dashboard.place!.street} ${user_dashboard.place!.subLocality}${user_dashboard.place!.locality}, ${user_dashboard.place!.postalCode}';
-                  } else {
-                    deliverySentence =
-                        'Stay at ${user_dashboard.place!.street} ${user_dashboard.place!.subLocality}${user_dashboard.place!.locality}, ${user_dashboard.place!.postalCode}';
-                  }
-                  if (isEnabled == true) {
-                    deliveryOption = 'Deliver';
-                  } else {
-                    deliveryOption = 'Stay';
-                  }
-                  if (add_info.foodCategory.text == '') {
-                    Fluttertoast.showToast(msg: 'Food category is left blank');
-                  } else if (add_info.ageNum.text == '') {
-                    Fluttertoast.showToast(msg: 'Age is left blank');
-                  } else if (add_info.ageValue == null) {
-                    Fluttertoast.showToast(msg: 'Age type is left blank');
-                  } else if (add_info.photo == null) {
-                    Fluttertoast.showToast(msg: 'Must upload a photo');
-                  } else {
-                    setState(
-                      () {
-                        add_info.fileID = const Uuid().v4();
-                      },
-                    );
+                  action: (controller) async {
+                    controller.loading();
+                    setState(() {
+                      myLocation = geo.point(
+                        latitude: user_dashboard.latitude!.toDouble(),
+                        longitude: user_dashboard.longitude!.toDouble(),
+                      );
+                    });
+                    if (add_location.isEnabled) {
+                      deliverySentence =
+                          'Deliver withen ${add_location.disNum.text} miles of ${user_dashboard.place!.street} ${user_dashboard.place!.subLocality}${user_dashboard.place!.locality}, ${user_dashboard.place!.postalCode}';
+                    } else {
+                      deliverySentence =
+                          'Stay at ${user_dashboard.place!.street} ${user_dashboard.place!.subLocality}${user_dashboard.place!.locality}, ${user_dashboard.place!.postalCode}';
+                    }
+                    if (isEnabled == true) {
+                      deliveryOption = 'Deliver';
+                    } else {
+                      deliveryOption = 'Stay';
+                    }
+                    if (add_info.foodCategory.text == '') {
+                      Fluttertoast.showToast(
+                          msg: 'Food category is left blank');
+                    } else if (add_info.ageNum.text == '') {
+                      Fluttertoast.showToast(msg: 'Age is left blank');
+                    } else if (add_info.ageValue == null) {
+                      Fluttertoast.showToast(msg: 'Age type is left blank');
+                    } else if (add_info.photo == null) {
+                      Fluttertoast.showToast(msg: 'Must upload a photo');
+                    } else {
+                      setState(
+                        () {
+                          add_info.fileID = const Uuid().v4();
+                        },
+                      );
 
-                    await storage
-                        .uploadFile(
-                            add_info.photo!.path.toString(), add_info.fileID)
-                        .then(
-                      (value) {
-                        downloadUrl = value;
-                        Fluttertoast.showToast(
-                          msg: value,
-                        );
-                      },
-                    );
-                    Navigator.of(context).pushReplacement(
-                      MaterialPageRoute(
-                        builder: (context) =>
-                            const user_dashboard.UserDashboard(),
-                      ),
-                    );
-                    await FirebaseFirestore.instance
-                        .collection("donations")
-                        .add(
-                      {
-                        'adminArea': user_dashboard.place!.administrativeArea,
-                        'status': 'Online',
-                        'deviceToken': mtoken,
-                        'city': user_dashboard.place!.subAdministrativeArea
-                                .toString() +
-                            ', ' +
-                            user_dashboard.place!.administrativeArea.toString(),
-                        'millisecondsSinceEpoch':
-                            DateTime.now().millisecondsSinceEpoch.toString(),
-                        'position': myLocation.data,
-                        'latitude': user_dashboard.latitude,
-                        'longitude': user_dashboard.longitude,
-                        'fullAddress':
-                            '${user_dashboard.place!.street} ${user_dashboard.place!.subLocality}${user_dashboard.place!.locality}, ${user_dashboard.place!.postalCode}',
-                        'street': user_dashboard.place!.street,
-                        'sublocality':
-                            user_dashboard.place!.subLocality.toString(),
-                        'locality': user_dashboard.place!.locality,
-                        'postalCode': user_dashboard.place!.postalCode,
-                        'adressName': user_dashboard.place!.name,
-                        'countryCode': user_dashboard.place!.isoCountryCode,
-                        'deliverySentence': deliverySentence,
-                        'deliveryOption': deliveryOption,
-                        'imagePath': add_info.fileID,
-                        'allergens': add_info.selectedAllergies.isEmpty == true
-                            ? "No allergies selected."
-                            : add_info.selectedAllergies.toList().join(", "),
-                        'foodCategory': add_info.foodCategory.text,
-                        'ageNum': add_info.ageNum.text,
-                        'ageUnit': add_info.ageValue,
-                        'agePhrase':
-                            add_info.ageNum.text + ' ${add_info.ageValue}',
-                        'timeStamp': DateTime.now().toString(),
-                        'date':
-                            DateFormat("MMMM dd, yyyy").format(DateTime.now()),
-                        'time': DateFormat("hh:mm a").format(DateTime.now()),
-                        'safetyTime':
-                            DateFormat("hh:mm:ss a").format(DateTime.now()),
-                        'uid': FirebaseAuth.instance.currentUser!.uid,
-                        'email': FirebaseAuth.instance.currentUser!.email,
-                        'isVerified':
-                            FirebaseAuth.instance.currentUser!.emailVerified,
-                        'rating': user_dashboard.rating,
-                        'firstName': user_dashboard.firstName,
-                        'lastName': user_dashboard.lastName,
-                        'hoursVolunteered': user_dashboard.hoursVolunteered,
-                        'donationsCompleted': user_dashboard.donationsCompleted,
-                        'donationHours': user_dashboard.hoursVolunteered,
-                        'downloadUrl': downloadUrl,
-                      },
-                    ).then(
-                      (value) {
-                        imageCache.clear();
-                        add_info.ageNum.clear();
-                        add_info.foodCategory.clear();
-                        setState(
-                          () {
-                            add_info.ageValue == null;
-                            add_info.selectedAllergies = [];
-                            add_info.photo = null;
-                          },
-                        );
-                        print(add_info.selectedAllergies.toList());
-                        Fluttertoast.showToast(msg: 'Request placed');
-                      },
-                    );
-                  } //starts loading animation
-                  await Future.delayed(const Duration(seconds: 3));
-                  controller.success(); //starts success animation
-                  await Future.delayed(const Duration(seconds: 1));
-                  controller.reset(); //resets the slider
-                },
+                      await storage
+                          .uploadFile(
+                              add_info.photo!.path.toString(), add_info.fileID)
+                          .then(
+                        (value) {
+                          downloadUrl = value;
+                          Fluttertoast.showToast(
+                            msg: value,
+                          );
+                        },
+                      );
+                      Navigator.of(context).pushReplacement(
+                        MaterialPageRoute(
+                          builder: (context) => CongratsScreen(),
+                        ),
+                      );
+                      await FirebaseFirestore.instance
+                          .collection("donations")
+                          .add(
+                        {
+                          'adminArea': user_dashboard.place!.administrativeArea,
+                          'status': 'Online',
+                          'deviceToken': mtoken,
+                          'city': user_dashboard.place!.subAdministrativeArea
+                                  .toString() +
+                              ', ' +
+                              user_dashboard.place!.administrativeArea
+                                  .toString(),
+                          'millisecondsSinceEpoch':
+                              DateTime.now().millisecondsSinceEpoch.toString(),
+                          'position': myLocation.data,
+                          'latitude': user_dashboard.latitude,
+                          'longitude': user_dashboard.longitude,
+                          'fullAddress':
+                              '${user_dashboard.place!.street} ${user_dashboard.place!.subLocality}${user_dashboard.place!.locality}, ${user_dashboard.place!.postalCode}',
+                          'street': user_dashboard.place!.street,
+                          'sublocality':
+                              user_dashboard.place!.subLocality.toString(),
+                          'locality': user_dashboard.place!.locality,
+                          'postalCode': user_dashboard.place!.postalCode,
+                          'adressName': user_dashboard.place!.name,
+                          'countryCode': user_dashboard.place!.isoCountryCode,
+                          'deliverySentence': deliverySentence,
+                          'deliveryOption': deliveryOption,
+                          'imagePath': add_info.fileID,
+                          'allergensList':
+                              add_info.selectedAllergies.isEmpty == true
+                                  ? "No allergies selected."
+                                  : add_info.selectedAllergies.toList(),
+                          'allergens': add_info.selectedAllergies.isEmpty ==
+                                  true
+                              ? "No allergies selected."
+                              : add_info.selectedAllergies.toList().join(", "),
+                          'foodCategory': add_info.foodCategory.text,
+                          'ageNum': add_info.ageNum.text,
+                          'ageUnit': add_info.ageValue,
+                          'agePhrase':
+                              add_info.ageNum.text + ' ${add_info.ageValue}',
+                          'timeStamp': DateTime.now().toString(),
+                          'date': DateFormat("MMMM dd, yyyy")
+                              .format(DateTime.now()),
+                          'time': DateFormat("hh:mm a").format(DateTime.now()),
+                          'safetyTime':
+                              DateFormat("hh:mm:ss a").format(DateTime.now()),
+                          'uid': FirebaseAuth.instance.currentUser!.uid,
+                          'email': FirebaseAuth.instance.currentUser!.email,
+                          'isVerified':
+                              FirebaseAuth.instance.currentUser!.emailVerified,
+                          'rating': user_dashboard.rating,
+                          'firstName': user_dashboard.firstName,
+                          'lastName': user_dashboard.lastName,
+                          'hoursVolunteered': user_dashboard.hoursVolunteered,
+                          'donationsCompleted':
+                              user_dashboard.donationsCompleted,
+                          'donationHours': user_dashboard.hoursVolunteered,
+                          'downloadUrl': downloadUrl,
+                        },
+                      ).then(
+                        (value) {
+                          imageCache.clear();
+                          add_info.ageNum.clear();
+                          add_info.foodCategory.clear();
+                          setState(
+                            () {
+                              add_info.ageValue == null;
+                              add_info.selectedAllergies = [];
+                              add_info.photo = null;
+                            },
+                          );
+                          print(add_info.selectedAllergies.toList());
+                          Fluttertoast.showToast(msg: 'Request placed');
+                        },
+                      );
+                    } //starts loading animation
+                    await Future.delayed(const Duration(seconds: 3));
+                    controller.success(); //starts success animation
+                    await Future.delayed(const Duration(seconds: 1));
+                    controller.reset(); //resets the slider
+                  },
+                ),
               ),
             ],
           ),

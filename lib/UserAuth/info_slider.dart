@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:intro_screen_onboarding_flutter/intro_app.dart';
+import 'package:washungrystable/customwidgets.dart';
 import 'package:washungrystable/userdashboard.dart';
 
 class TestScreen extends StatelessWidget {
@@ -73,11 +75,15 @@ class TestScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.purple,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       home: IntroScreenOnboarding(
-        backgroudColor: Colors.white,
+        skipTextStyle: GoogleFonts.poppins(
+          fontSize: 20,
+          fontWeight: FontWeight.w600,
+        ),
+        backgroudColor: CustomColors.secondary,
         introductionList: list,
         onTapSkipButton: () {
           Navigator.push(

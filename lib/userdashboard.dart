@@ -708,85 +708,95 @@ class _UserDashboardState extends State<UserDashboard>
                                         borderRadius: BorderRadius.circular(40),
                                         color: CustomColors.secondary,
                                         border: Border.all(
-                                          width: 1,
                                           color: CustomColors.textColor,
                                         ),
                                       ),
                                       child: Row(
                                         children: [
-                                          Padding(
-                                            padding: const EdgeInsets.only(
-                                              right: 15,
-                                            ),
-                                            child: ClipRRect(
-                                              borderRadius:
-                                                  BorderRadius.circular(40.0),
-                                              child: Image.network(
-                                                data['downloadUrl'],
-                                                fit: BoxFit.cover,
-                                                width: 150,
-                                                height: 150,
+                                          Expanded(
+                                            flex: 1,
+                                            child: Padding(
+                                              padding: const EdgeInsets.only(
+                                                  right: 15),
+                                              child: ClipRRect(
+                                                borderRadius:
+                                                    BorderRadius.circular(40.0),
+                                                child: Image.network(
+                                                  data['downloadUrl'],
+                                                  fit: BoxFit.cover,
+                                                  height: 150,
+                                                ),
                                               ),
                                             ),
                                           ),
-                                          Column(
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.center,
-                                            crossAxisAlignment:
-                                                CrossAxisAlignment.start,
-                                            children: [
-                                              ConstrainedBox(
-                                                constraints:
-                                                    const BoxConstraints(
-                                                  maxWidth: 140,
+                                          Expanded(
+                                            flex: 1,
+                                            child: Column(
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.center,
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.start,
+                                              children: [
+                                                ConstrainedBox(
+                                                  constraints:
+                                                      const BoxConstraints(
+                                                    maxWidth: 140,
+                                                  ),
+                                                  child: AutoSizeText(
+                                                    data['foodCategory']
+                                                        .toString(),
+                                                    maxLines: 1,
+                                                    style: GoogleFonts.poppins(
+                                                      fontSize: 30,
+                                                      color: CustomColors
+                                                          .textColor,
+                                                      fontWeight:
+                                                          FontWeight.w700,
+                                                    ),
+                                                  ),
                                                 ),
-                                                child: AutoSizeText(
-                                                  data['foodCategory']
-                                                      .toString(),
+                                                const SizedBox(
+                                                  height: 5,
+                                                ),
+                                                ConstrainedBox(
+                                                  constraints:
+                                                      const BoxConstraints(
+                                                    maxHeight: 70.0,
+                                                    maxWidth: 140,
+                                                  ),
+                                                  child: AutoSizeText(
+                                                    data['allergens'],
+                                                    minFontSize: 10,
+                                                    maxFontSize: 25,
+                                                    style: GoogleFonts.poppins(
+                                                      color: CustomColors
+                                                          .textColor,
+                                                      fontWeight:
+                                                          FontWeight.w500,
+                                                    ),
+                                                  ),
+                                                ),
+                                                const SizedBox(
+                                                  height: 5,
+                                                ),
+                                                AutoSizeText(
+                                                  data['ageNum'].toString() +
+                                                      ' ' +
+                                                      data['ageUnit']
+                                                          .toString(),
                                                   maxLines: 1,
                                                   style: GoogleFonts.poppins(
                                                     color:
                                                         CustomColors.textColor,
-                                                    fontSize: 25,
-                                                    fontWeight: FontWeight.w700,
+                                                    fontSize: 15,
+                                                    fontWeight: FontWeight.w400,
                                                   ),
                                                 ),
-                                              ),
-                                              const SizedBox(
-                                                height: 5,
-                                              ),
-                                              ConstrainedBox(
-                                                constraints:
-                                                    const BoxConstraints(
-                                                  maxHeight: 70.0,
-                                                  maxWidth: 140,
+                                                const SizedBox(
+                                                  height: 5,
                                                 ),
-                                                child: AutoSizeText(
-                                                  data['allergens'],
-                                                  minFontSize: 10,
-                                                  maxFontSize: 25,
-                                                  style: GoogleFonts.poppins(
-                                                    color:
-                                                        CustomColors.textColor,
-                                                    fontWeight: FontWeight.w500,
-                                                  ),
-                                                ),
-                                              ),
-                                              const SizedBox(
-                                                height: 5,
-                                              ),
-                                              AutoSizeText(
-                                                data['ageNum'].toString() +
-                                                    ' ' +
-                                                    data['ageUnit'].toString(),
-                                                maxLines: 1,
-                                                style: GoogleFonts.poppins(
-                                                  color: CustomColors.textColor,
-                                                  fontSize: 15,
-                                                  fontWeight: FontWeight.w400,
-                                                ),
-                                              ),
-                                            ],
+                                              ],
+                                            ),
                                           ),
                                         ],
                                       ),
@@ -984,85 +994,95 @@ class _UserDashboardState extends State<UserDashboard>
                                         borderRadius: BorderRadius.circular(40),
                                         color: CustomColors.secondary,
                                         border: Border.all(
-                                          width: 1,
                                           color: CustomColors.textColor,
                                         ),
                                       ),
                                       child: Row(
                                         children: [
-                                          Padding(
-                                            padding: const EdgeInsets.only(
-                                              right: 15,
-                                            ),
-                                            child: ClipRRect(
-                                              borderRadius:
-                                                  BorderRadius.circular(40.0),
-                                              child: Image.network(
-                                                data['downloadUrl'],
-                                                fit: BoxFit.cover,
-                                                width: 150,
-                                                height: 150,
+                                          Expanded(
+                                            flex: 1,
+                                            child: Padding(
+                                              padding: const EdgeInsets.only(
+                                                  right: 15),
+                                              child: ClipRRect(
+                                                borderRadius:
+                                                    BorderRadius.circular(40.0),
+                                                child: Image.network(
+                                                  data['downloadUrl'],
+                                                  fit: BoxFit.cover,
+                                                  height: 150,
+                                                ),
                                               ),
                                             ),
                                           ),
-                                          Column(
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.center,
-                                            crossAxisAlignment:
-                                                CrossAxisAlignment.start,
-                                            children: [
-                                              ConstrainedBox(
-                                                constraints:
-                                                    const BoxConstraints(
-                                                  maxWidth: 140,
+                                          Expanded(
+                                            flex: 1,
+                                            child: Column(
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.center,
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.start,
+                                              children: [
+                                                ConstrainedBox(
+                                                  constraints:
+                                                      const BoxConstraints(
+                                                    maxWidth: 140,
+                                                  ),
+                                                  child: AutoSizeText(
+                                                    data['foodCategory']
+                                                        .toString(),
+                                                    maxLines: 1,
+                                                    style: GoogleFonts.poppins(
+                                                      fontSize: 30,
+                                                      color: CustomColors
+                                                          .textColor,
+                                                      fontWeight:
+                                                          FontWeight.w700,
+                                                    ),
+                                                  ),
                                                 ),
-                                                child: AutoSizeText(
-                                                  data['foodCategory']
-                                                      .toString(),
+                                                const SizedBox(
+                                                  height: 5,
+                                                ),
+                                                ConstrainedBox(
+                                                  constraints:
+                                                      const BoxConstraints(
+                                                    maxHeight: 70.0,
+                                                    maxWidth: 140,
+                                                  ),
+                                                  child: AutoSizeText(
+                                                    data['allergens'],
+                                                    minFontSize: 10,
+                                                    maxFontSize: 25,
+                                                    style: GoogleFonts.poppins(
+                                                      color: CustomColors
+                                                          .textColor,
+                                                      fontWeight:
+                                                          FontWeight.w500,
+                                                    ),
+                                                  ),
+                                                ),
+                                                const SizedBox(
+                                                  height: 5,
+                                                ),
+                                                AutoSizeText(
+                                                  data['ageNum'].toString() +
+                                                      ' ' +
+                                                      data['ageUnit']
+                                                          .toString(),
                                                   maxLines: 1,
                                                   style: GoogleFonts.poppins(
                                                     color:
                                                         CustomColors.textColor,
-                                                    fontSize: 25,
-                                                    fontWeight: FontWeight.w700,
+                                                    fontSize: 15,
+                                                    fontWeight: FontWeight.w400,
                                                   ),
                                                 ),
-                                              ),
-                                              const SizedBox(
-                                                height: 5,
-                                              ),
-                                              ConstrainedBox(
-                                                constraints:
-                                                    const BoxConstraints(
-                                                  maxHeight: 70.0,
-                                                  maxWidth: 140,
+                                                const SizedBox(
+                                                  height: 5,
                                                 ),
-                                                child: AutoSizeText(
-                                                  data['allergens'],
-                                                  minFontSize: 10,
-                                                  maxFontSize: 25,
-                                                  style: GoogleFonts.poppins(
-                                                    color:
-                                                        CustomColors.textColor,
-                                                    fontWeight: FontWeight.w500,
-                                                  ),
-                                                ),
-                                              ),
-                                              const SizedBox(
-                                                height: 5,
-                                              ),
-                                              AutoSizeText(
-                                                data['ageNum'].toString() +
-                                                    ' ' +
-                                                    data['ageUnit'].toString(),
-                                                maxLines: 1,
-                                                style: GoogleFonts.poppins(
-                                                  color: CustomColors.textColor,
-                                                  fontSize: 15,
-                                                  fontWeight: FontWeight.w400,
-                                                ),
-                                              ),
-                                            ],
+                                              ],
+                                            ),
                                           ),
                                         ],
                                       ),
@@ -1127,80 +1147,91 @@ class _UserDashboardState extends State<UserDashboard>
                                       borderRadius: BorderRadius.circular(40),
                                       color: CustomColors.secondary,
                                       border: Border.all(
-                                        width: 1,
                                         color: CustomColors.textColor,
                                       ),
                                     ),
                                     child: Row(
                                       children: [
-                                        Padding(
-                                          padding: const EdgeInsets.only(
-                                            right: 15,
-                                          ),
-                                          child: ClipRRect(
-                                            borderRadius:
-                                                BorderRadius.circular(40.0),
-                                            child: Image.network(
-                                              data['downloadUrl'],
-                                              fit: BoxFit.cover,
-                                              width: 150,
-                                              height: 150,
+                                        Expanded(
+                                          flex: 1,
+                                          child: Padding(
+                                            padding: const EdgeInsets.only(
+                                                right: 15),
+                                            child: ClipRRect(
+                                              borderRadius:
+                                                  BorderRadius.circular(40.0),
+                                              child: Image.network(
+                                                data['downloadUrl'],
+                                                fit: BoxFit.cover,
+                                                height: 150,
+                                              ),
                                             ),
                                           ),
                                         ),
-                                        Column(
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.center,
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.start,
-                                          children: [
-                                            ConstrainedBox(
-                                              constraints: const BoxConstraints(
-                                                maxWidth: 140,
+                                        Expanded(
+                                          flex: 1,
+                                          child: Column(
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.center,
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start,
+                                            children: [
+                                              ConstrainedBox(
+                                                constraints:
+                                                    const BoxConstraints(
+                                                  maxWidth: 140,
+                                                ),
+                                                child: AutoSizeText(
+                                                  data['foodCategory']
+                                                      .toString(),
+                                                  maxLines: 1,
+                                                  style: GoogleFonts.poppins(
+                                                    fontSize: 30,
+                                                    color:
+                                                        CustomColors.textColor,
+                                                    fontWeight: FontWeight.w700,
+                                                  ),
+                                                ),
                                               ),
-                                              child: AutoSizeText(
-                                                data['foodCategory'].toString(),
+                                              const SizedBox(
+                                                height: 5,
+                                              ),
+                                              ConstrainedBox(
+                                                constraints:
+                                                    const BoxConstraints(
+                                                  maxHeight: 70.0,
+                                                  maxWidth: 140,
+                                                ),
+                                                child: AutoSizeText(
+                                                  data['allergens'],
+                                                  minFontSize: 10,
+                                                  maxFontSize: 25,
+                                                  style: GoogleFonts.poppins(
+                                                    color:
+                                                        CustomColors.textColor,
+                                                    fontWeight: FontWeight.w500,
+                                                  ),
+                                                ),
+                                              ),
+                                              const SizedBox(
+                                                height: 5,
+                                              ),
+                                              AutoSizeText(
+                                                data['ageNum'].toString() +
+                                                    ' ' +
+                                                    data['ageUnit'].toString(),
                                                 maxLines: 1,
                                                 style: GoogleFonts.poppins(
                                                   color: CustomColors.textColor,
-                                                  fontSize: 25,
-                                                  fontWeight: FontWeight.w700,
+                                                  fontSize: 15,
+                                                  fontWeight: FontWeight.w400,
                                                 ),
                                               ),
-                                            ),
-                                            const SizedBox(
-                                              height: 5,
-                                            ),
-                                            ConstrainedBox(
-                                              constraints: const BoxConstraints(
-                                                maxHeight: 70.0,
-                                                maxWidth: 140,
+                                              const SizedBox(
+                                                height: 5,
                                               ),
-                                              child: AutoSizeText(
-                                                data['allergens'],
-                                                minFontSize: 10,
-                                                maxFontSize: 25,
-                                                style: GoogleFonts.poppins(
-                                                  color: CustomColors.textColor,
-                                                  fontWeight: FontWeight.w500,
-                                                ),
-                                              ),
-                                            ),
-                                            const SizedBox(
-                                              height: 5,
-                                            ),
-                                            AutoSizeText(
-                                              data['ageNum'].toString() +
-                                                  ' ' +
-                                                  data['ageUnit'].toString(),
-                                              maxLines: 1,
-                                              style: GoogleFonts.poppins(
-                                                color: CustomColors.textColor,
-                                                fontSize: 15,
-                                                fontWeight: FontWeight.w400,
-                                              ),
-                                            ),
-                                          ],
+                                            ],
+                                          ),
                                         ),
                                       ],
                                     ),
@@ -1264,80 +1295,91 @@ class _UserDashboardState extends State<UserDashboard>
                                       borderRadius: BorderRadius.circular(40),
                                       color: CustomColors.secondary,
                                       border: Border.all(
-                                        width: 1,
                                         color: CustomColors.textColor,
                                       ),
                                     ),
                                     child: Row(
                                       children: [
-                                        Padding(
-                                          padding: const EdgeInsets.only(
-                                            right: 15,
-                                          ),
-                                          child: ClipRRect(
-                                            borderRadius:
-                                                BorderRadius.circular(40.0),
-                                            child: Image.network(
-                                              data['downloadUrl'],
-                                              fit: BoxFit.cover,
-                                              width: 150,
-                                              height: 150,
+                                        Expanded(
+                                          flex: 1,
+                                          child: Padding(
+                                            padding: const EdgeInsets.only(
+                                                right: 15),
+                                            child: ClipRRect(
+                                              borderRadius:
+                                                  BorderRadius.circular(40.0),
+                                              child: Image.network(
+                                                data['downloadUrl'],
+                                                fit: BoxFit.cover,
+                                                height: 150,
+                                              ),
                                             ),
                                           ),
                                         ),
-                                        Column(
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.center,
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.start,
-                                          children: [
-                                            ConstrainedBox(
-                                              constraints: const BoxConstraints(
-                                                maxWidth: 140,
+                                        Expanded(
+                                          flex: 1,
+                                          child: Column(
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.center,
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start,
+                                            children: [
+                                              ConstrainedBox(
+                                                constraints:
+                                                    const BoxConstraints(
+                                                  maxWidth: 140,
+                                                ),
+                                                child: AutoSizeText(
+                                                  data['foodCategory']
+                                                      .toString(),
+                                                  maxLines: 1,
+                                                  style: GoogleFonts.poppins(
+                                                    fontSize: 30,
+                                                    color:
+                                                        CustomColors.textColor,
+                                                    fontWeight: FontWeight.w700,
+                                                  ),
+                                                ),
                                               ),
-                                              child: AutoSizeText(
-                                                data['foodCategory'].toString(),
+                                              const SizedBox(
+                                                height: 5,
+                                              ),
+                                              ConstrainedBox(
+                                                constraints:
+                                                    const BoxConstraints(
+                                                  maxHeight: 70.0,
+                                                  maxWidth: 140,
+                                                ),
+                                                child: AutoSizeText(
+                                                  data['allergens'],
+                                                  minFontSize: 10,
+                                                  maxFontSize: 25,
+                                                  style: GoogleFonts.poppins(
+                                                    color:
+                                                        CustomColors.textColor,
+                                                    fontWeight: FontWeight.w500,
+                                                  ),
+                                                ),
+                                              ),
+                                              const SizedBox(
+                                                height: 5,
+                                              ),
+                                              AutoSizeText(
+                                                data['ageNum'].toString() +
+                                                    ' ' +
+                                                    data['ageUnit'].toString(),
                                                 maxLines: 1,
                                                 style: GoogleFonts.poppins(
                                                   color: CustomColors.textColor,
-                                                  fontSize: 25,
-                                                  fontWeight: FontWeight.w700,
+                                                  fontSize: 15,
+                                                  fontWeight: FontWeight.w400,
                                                 ),
                                               ),
-                                            ),
-                                            const SizedBox(
-                                              height: 5,
-                                            ),
-                                            ConstrainedBox(
-                                              constraints: const BoxConstraints(
-                                                maxHeight: 70.0,
-                                                maxWidth: 140,
+                                              const SizedBox(
+                                                height: 5,
                                               ),
-                                              child: AutoSizeText(
-                                                data['allergens'],
-                                                minFontSize: 10,
-                                                maxFontSize: 25,
-                                                style: GoogleFonts.poppins(
-                                                  color: CustomColors.textColor,
-                                                  fontWeight: FontWeight.w500,
-                                                ),
-                                              ),
-                                            ),
-                                            const SizedBox(
-                                              height: 5,
-                                            ),
-                                            AutoSizeText(
-                                              data['ageNum'].toString() +
-                                                  ' ' +
-                                                  data['ageUnit'].toString(),
-                                              maxLines: 1,
-                                              style: GoogleFonts.poppins(
-                                                color: CustomColors.textColor,
-                                                fontSize: 15,
-                                                fontWeight: FontWeight.w400,
-                                              ),
-                                            ),
-                                          ],
+                                            ],
+                                          ),
                                         ),
                                       ],
                                     ),
@@ -1595,52 +1637,52 @@ class _UserDashboardState extends State<UserDashboard>
                                                         },
                                                       )
                                                     : Container(),
-                                                GestureDetector(
-                                                  child: AutoSizeText(
-                                                    "Start tracking",
-                                                    maxLines: 1,
-                                                    style: GoogleFonts.poppins(
-                                                      color: CustomColors
-                                                          .textColor,
-                                                      fontSize: 24,
-                                                      fontWeight:
-                                                          FontWeight.w500,
-                                                    ),
-                                                  ),
-                                                  onTap: () {
-                                                    // _locationSubscription =
-                                                    //     _locationTracker
-                                                    //         .onLocationChanged
-                                                    //         .listen(
-                                                    //   (newLocalData) {
-                                                    //     if (_controller !=
-                                                    //         null) {
-                                                    //       _controller!
-                                                    //           .animateCamera(
-                                                    //         CameraUpdate
-                                                    //             .newCameraPosition(
-                                                    //           CameraPosition(
-                                                    //               bearing:
-                                                    //                   192.8334901395799,
-                                                    //               target: LatLng(
-                                                    //                   newLocalData
-                                                    //                       .latitude!
-                                                    //                       .toDouble(),
-                                                    //                   newLocalData
-                                                    //                       .longitude!
-                                                    //                       .toDouble()),
-                                                    //               tilt: 0,
-                                                    //               zoom: 18.00),
-                                                    //         ),
-                                                    //       );
-                                                    //       updateMarkerAndCircle(
-                                                    //           newLocalData,
-                                                    //           imageData);
-                                                    //     }
-                                                    //   },
-                                                    // );
-                                                  },
-                                                ),
+                                                // GestureDetector(
+                                                //   child: AutoSizeText(
+                                                //     "Start tracking",
+                                                //     maxLines: 1,
+                                                //     style: GoogleFonts.poppins(
+                                                //       color: CustomColors
+                                                //           .textColor,
+                                                //       fontSize: 24,
+                                                //       fontWeight:
+                                                //           FontWeight.w500,
+                                                //     ),
+                                                //   ),
+                                                //   onTap: () {
+                                                //     _locationSubscription =
+                                                //         _locationTracker
+                                                //             .onLocationChanged
+                                                //             .listen(
+                                                //       (newLocalData) {
+                                                //         if (_controller !=
+                                                //             null) {
+                                                //           _controller!
+                                                //               .animateCamera(
+                                                //             CameraUpdate
+                                                //                 .newCameraPosition(
+                                                //               CameraPosition(
+                                                //                   bearing:
+                                                //                       192.8334901395799,
+                                                //                   target: LatLng(
+                                                //                       newLocalData
+                                                //                           .latitude!
+                                                //                           .toDouble(),
+                                                //                       newLocalData
+                                                //                           .longitude!
+                                                //                           .toDouble()),
+                                                //                   tilt: 0,
+                                                //                   zoom: 18.00),
+                                                //             ),
+                                                //           );
+                                                //           updateMarkerAndCircle(
+                                                //               newLocalData,
+                                                //               imageData);
+                                                //         }
+                                                //       },
+                                                //     );
+                                                //   },
+                                                // ),
                                                 const SizedBox(
                                                   height: 20,
                                                 ),
@@ -1655,85 +1697,95 @@ class _UserDashboardState extends State<UserDashboard>
                                         borderRadius: BorderRadius.circular(40),
                                         color: CustomColors.secondary,
                                         border: Border.all(
-                                          width: 1,
                                           color: CustomColors.textColor,
                                         ),
                                       ),
                                       child: Row(
                                         children: [
-                                          Padding(
-                                            padding: const EdgeInsets.only(
-                                              right: 15,
-                                            ),
-                                            child: ClipRRect(
-                                              borderRadius:
-                                                  BorderRadius.circular(40.0),
-                                              child: Image.network(
-                                                data['downloadUrl'],
-                                                fit: BoxFit.cover,
-                                                width: 150,
-                                                height: 150,
+                                          Expanded(
+                                            flex: 1,
+                                            child: Padding(
+                                              padding: const EdgeInsets.only(
+                                                  right: 15),
+                                              child: ClipRRect(
+                                                borderRadius:
+                                                    BorderRadius.circular(40.0),
+                                                child: Image.network(
+                                                  data['downloadUrl'],
+                                                  fit: BoxFit.cover,
+                                                  height: 150,
+                                                ),
                                               ),
                                             ),
                                           ),
-                                          Column(
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.center,
-                                            crossAxisAlignment:
-                                                CrossAxisAlignment.start,
-                                            children: [
-                                              ConstrainedBox(
-                                                constraints:
-                                                    const BoxConstraints(
-                                                  maxWidth: 140,
+                                          Expanded(
+                                            flex: 1,
+                                            child: Column(
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.center,
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.start,
+                                              children: [
+                                                ConstrainedBox(
+                                                  constraints:
+                                                      const BoxConstraints(
+                                                    maxWidth: 140,
+                                                  ),
+                                                  child: AutoSizeText(
+                                                    data['foodCategory']
+                                                        .toString(),
+                                                    maxLines: 1,
+                                                    style: GoogleFonts.poppins(
+                                                      fontSize: 30,
+                                                      color: CustomColors
+                                                          .textColor,
+                                                      fontWeight:
+                                                          FontWeight.w700,
+                                                    ),
+                                                  ),
                                                 ),
-                                                child: AutoSizeText(
-                                                  data['foodCategory']
-                                                      .toString(),
+                                                const SizedBox(
+                                                  height: 5,
+                                                ),
+                                                ConstrainedBox(
+                                                  constraints:
+                                                      const BoxConstraints(
+                                                    maxHeight: 70.0,
+                                                    maxWidth: 140,
+                                                  ),
+                                                  child: AutoSizeText(
+                                                    data['allergens'],
+                                                    minFontSize: 10,
+                                                    maxFontSize: 25,
+                                                    style: GoogleFonts.poppins(
+                                                      color: CustomColors
+                                                          .textColor,
+                                                      fontWeight:
+                                                          FontWeight.w500,
+                                                    ),
+                                                  ),
+                                                ),
+                                                const SizedBox(
+                                                  height: 5,
+                                                ),
+                                                AutoSizeText(
+                                                  data['ageNum'].toString() +
+                                                      ' ' +
+                                                      data['ageUnit']
+                                                          .toString(),
                                                   maxLines: 1,
                                                   style: GoogleFonts.poppins(
                                                     color:
                                                         CustomColors.textColor,
-                                                    fontSize: 25,
-                                                    fontWeight: FontWeight.w700,
+                                                    fontSize: 15,
+                                                    fontWeight: FontWeight.w400,
                                                   ),
                                                 ),
-                                              ),
-                                              const SizedBox(
-                                                height: 5,
-                                              ),
-                                              ConstrainedBox(
-                                                constraints:
-                                                    const BoxConstraints(
-                                                  maxHeight: 70.0,
-                                                  maxWidth: 140,
+                                                const SizedBox(
+                                                  height: 5,
                                                 ),
-                                                child: AutoSizeText(
-                                                  data['allergens'],
-                                                  minFontSize: 10,
-                                                  maxFontSize: 25,
-                                                  style: GoogleFonts.poppins(
-                                                    color:
-                                                        CustomColors.textColor,
-                                                    fontWeight: FontWeight.w500,
-                                                  ),
-                                                ),
-                                              ),
-                                              const SizedBox(
-                                                height: 5,
-                                              ),
-                                              AutoSizeText(
-                                                data['ageNum'].toString() +
-                                                    ' ' +
-                                                    data['ageUnit'].toString(),
-                                                maxLines: 1,
-                                                style: GoogleFonts.poppins(
-                                                  color: CustomColors.textColor,
-                                                  fontSize: 15,
-                                                  fontWeight: FontWeight.w400,
-                                                ),
-                                              ),
-                                            ],
+                                              ],
+                                            ),
                                           ),
                                         ],
                                       ),
@@ -1849,85 +1901,95 @@ class _UserDashboardState extends State<UserDashboard>
                                         borderRadius: BorderRadius.circular(40),
                                         color: CustomColors.secondary,
                                         border: Border.all(
-                                          width: 1,
                                           color: CustomColors.textColor,
                                         ),
                                       ),
                                       child: Row(
                                         children: [
-                                          Padding(
-                                            padding: const EdgeInsets.only(
-                                              right: 15,
-                                            ),
-                                            child: ClipRRect(
-                                              borderRadius:
-                                                  BorderRadius.circular(40.0),
-                                              child: Image.network(
-                                                data['downloadUrl'],
-                                                fit: BoxFit.cover,
-                                                width: 150,
-                                                height: 150,
+                                          Expanded(
+                                            flex: 1,
+                                            child: Padding(
+                                              padding: const EdgeInsets.only(
+                                                  right: 15),
+                                              child: ClipRRect(
+                                                borderRadius:
+                                                    BorderRadius.circular(40.0),
+                                                child: Image.network(
+                                                  data['downloadUrl'],
+                                                  fit: BoxFit.cover,
+                                                  height: 150,
+                                                ),
                                               ),
                                             ),
                                           ),
-                                          Column(
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.center,
-                                            crossAxisAlignment:
-                                                CrossAxisAlignment.start,
-                                            children: [
-                                              ConstrainedBox(
-                                                constraints:
-                                                    const BoxConstraints(
-                                                  maxWidth: 140,
+                                          Expanded(
+                                            flex: 1,
+                                            child: Column(
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.center,
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.start,
+                                              children: [
+                                                ConstrainedBox(
+                                                  constraints:
+                                                      const BoxConstraints(
+                                                    maxWidth: 140,
+                                                  ),
+                                                  child: AutoSizeText(
+                                                    data['foodCategory']
+                                                        .toString(),
+                                                    maxLines: 1,
+                                                    style: GoogleFonts.poppins(
+                                                      fontSize: 30,
+                                                      color: CustomColors
+                                                          .textColor,
+                                                      fontWeight:
+                                                          FontWeight.w700,
+                                                    ),
+                                                  ),
                                                 ),
-                                                child: AutoSizeText(
-                                                  data['foodCategory']
-                                                      .toString(),
+                                                const SizedBox(
+                                                  height: 5,
+                                                ),
+                                                ConstrainedBox(
+                                                  constraints:
+                                                      const BoxConstraints(
+                                                    maxHeight: 70.0,
+                                                    maxWidth: 140,
+                                                  ),
+                                                  child: AutoSizeText(
+                                                    data['allergens'],
+                                                    minFontSize: 10,
+                                                    maxFontSize: 25,
+                                                    style: GoogleFonts.poppins(
+                                                      color: CustomColors
+                                                          .textColor,
+                                                      fontWeight:
+                                                          FontWeight.w500,
+                                                    ),
+                                                  ),
+                                                ),
+                                                const SizedBox(
+                                                  height: 5,
+                                                ),
+                                                AutoSizeText(
+                                                  data['ageNum'].toString() +
+                                                      ' ' +
+                                                      data['ageUnit']
+                                                          .toString(),
                                                   maxLines: 1,
                                                   style: GoogleFonts.poppins(
                                                     color:
                                                         CustomColors.textColor,
-                                                    fontSize: 25,
-                                                    fontWeight: FontWeight.w700,
+                                                    fontSize: 15,
+                                                    fontWeight: FontWeight.w400,
                                                   ),
                                                 ),
-                                              ),
-                                              const SizedBox(
-                                                height: 5,
-                                              ),
-                                              ConstrainedBox(
-                                                constraints:
-                                                    const BoxConstraints(
-                                                  maxHeight: 70.0,
-                                                  maxWidth: 140,
+                                                const SizedBox(
+                                                  height: 5,
                                                 ),
-                                                child: AutoSizeText(
-                                                  data['allergens'],
-                                                  minFontSize: 10,
-                                                  maxFontSize: 25,
-                                                  style: GoogleFonts.poppins(
-                                                    color:
-                                                        CustomColors.textColor,
-                                                    fontWeight: FontWeight.w500,
-                                                  ),
-                                                ),
-                                              ),
-                                              const SizedBox(
-                                                height: 5,
-                                              ),
-                                              AutoSizeText(
-                                                data['ageNum'].toString() +
-                                                    ' ' +
-                                                    data['ageUnit'].toString(),
-                                                maxLines: 1,
-                                                style: GoogleFonts.poppins(
-                                                  color: CustomColors.textColor,
-                                                  fontSize: 15,
-                                                  fontWeight: FontWeight.w400,
-                                                ),
-                                              ),
-                                            ],
+                                              ],
+                                            ),
                                           ),
                                         ],
                                       ),
@@ -1992,80 +2054,91 @@ class _UserDashboardState extends State<UserDashboard>
                                       borderRadius: BorderRadius.circular(40),
                                       color: CustomColors.secondary,
                                       border: Border.all(
-                                        width: 1,
                                         color: CustomColors.textColor,
                                       ),
                                     ),
                                     child: Row(
                                       children: [
-                                        Padding(
-                                          padding: const EdgeInsets.only(
-                                            right: 15,
-                                          ),
-                                          child: ClipRRect(
-                                            borderRadius:
-                                                BorderRadius.circular(40.0),
-                                            child: Image.network(
-                                              data['downloadUrl'],
-                                              fit: BoxFit.cover,
-                                              width: 150,
-                                              height: 150,
+                                        Expanded(
+                                          flex: 1,
+                                          child: Padding(
+                                            padding: const EdgeInsets.only(
+                                                right: 15),
+                                            child: ClipRRect(
+                                              borderRadius:
+                                                  BorderRadius.circular(40.0),
+                                              child: Image.network(
+                                                data['downloadUrl'],
+                                                fit: BoxFit.cover,
+                                                height: 150,
+                                              ),
                                             ),
                                           ),
                                         ),
-                                        Column(
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.center,
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.start,
-                                          children: [
-                                            ConstrainedBox(
-                                              constraints: const BoxConstraints(
-                                                maxWidth: 140,
+                                        Expanded(
+                                          flex: 1,
+                                          child: Column(
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.center,
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start,
+                                            children: [
+                                              ConstrainedBox(
+                                                constraints:
+                                                    const BoxConstraints(
+                                                  maxWidth: 140,
+                                                ),
+                                                child: AutoSizeText(
+                                                  data['foodCategory']
+                                                      .toString(),
+                                                  maxLines: 1,
+                                                  style: GoogleFonts.poppins(
+                                                    fontSize: 30,
+                                                    color:
+                                                        CustomColors.textColor,
+                                                    fontWeight: FontWeight.w700,
+                                                  ),
+                                                ),
                                               ),
-                                              child: AutoSizeText(
-                                                data['foodCategory'].toString(),
+                                              const SizedBox(
+                                                height: 5,
+                                              ),
+                                              ConstrainedBox(
+                                                constraints:
+                                                    const BoxConstraints(
+                                                  maxHeight: 70.0,
+                                                  maxWidth: 140,
+                                                ),
+                                                child: AutoSizeText(
+                                                  data['allergens'],
+                                                  minFontSize: 10,
+                                                  maxFontSize: 25,
+                                                  style: GoogleFonts.poppins(
+                                                    color:
+                                                        CustomColors.textColor,
+                                                    fontWeight: FontWeight.w500,
+                                                  ),
+                                                ),
+                                              ),
+                                              const SizedBox(
+                                                height: 5,
+                                              ),
+                                              AutoSizeText(
+                                                data['ageNum'].toString() +
+                                                    ' ' +
+                                                    data['ageUnit'].toString(),
                                                 maxLines: 1,
                                                 style: GoogleFonts.poppins(
                                                   color: CustomColors.textColor,
-                                                  fontSize: 25,
-                                                  fontWeight: FontWeight.w700,
+                                                  fontSize: 15,
+                                                  fontWeight: FontWeight.w400,
                                                 ),
                                               ),
-                                            ),
-                                            const SizedBox(
-                                              height: 5,
-                                            ),
-                                            ConstrainedBox(
-                                              constraints: const BoxConstraints(
-                                                maxHeight: 70.0,
-                                                maxWidth: 140,
+                                              const SizedBox(
+                                                height: 5,
                                               ),
-                                              child: AutoSizeText(
-                                                data['allergens'],
-                                                minFontSize: 10,
-                                                maxFontSize: 25,
-                                                style: GoogleFonts.poppins(
-                                                  color: CustomColors.textColor,
-                                                  fontWeight: FontWeight.w500,
-                                                ),
-                                              ),
-                                            ),
-                                            const SizedBox(
-                                              height: 5,
-                                            ),
-                                            AutoSizeText(
-                                              data['ageNum'].toString() +
-                                                  ' ' +
-                                                  data['ageUnit'].toString(),
-                                              maxLines: 1,
-                                              style: GoogleFonts.poppins(
-                                                color: CustomColors.textColor,
-                                                fontSize: 15,
-                                                fontWeight: FontWeight.w400,
-                                              ),
-                                            ),
-                                          ],
+                                            ],
+                                          ),
                                         ),
                                       ],
                                     ),
@@ -2129,80 +2202,91 @@ class _UserDashboardState extends State<UserDashboard>
                                       borderRadius: BorderRadius.circular(40),
                                       color: CustomColors.secondary,
                                       border: Border.all(
-                                        width: 1,
                                         color: CustomColors.textColor,
                                       ),
                                     ),
                                     child: Row(
                                       children: [
-                                        Padding(
-                                          padding: const EdgeInsets.only(
-                                            right: 15,
-                                          ),
-                                          child: ClipRRect(
-                                            borderRadius:
-                                                BorderRadius.circular(40.0),
-                                            child: Image.network(
-                                              data['downloadUrl'],
-                                              fit: BoxFit.cover,
-                                              width: 150,
-                                              height: 150,
+                                        Expanded(
+                                          flex: 1,
+                                          child: Padding(
+                                            padding: const EdgeInsets.only(
+                                                right: 15),
+                                            child: ClipRRect(
+                                              borderRadius:
+                                                  BorderRadius.circular(40.0),
+                                              child: Image.network(
+                                                data['downloadUrl'],
+                                                fit: BoxFit.cover,
+                                                height: 150,
+                                              ),
                                             ),
                                           ),
                                         ),
-                                        Column(
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.center,
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.start,
-                                          children: [
-                                            ConstrainedBox(
-                                              constraints: const BoxConstraints(
-                                                maxWidth: 140,
+                                        Expanded(
+                                          flex: 1,
+                                          child: Column(
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.center,
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start,
+                                            children: [
+                                              ConstrainedBox(
+                                                constraints:
+                                                    const BoxConstraints(
+                                                  maxWidth: 140,
+                                                ),
+                                                child: AutoSizeText(
+                                                  data['foodCategory']
+                                                      .toString(),
+                                                  maxLines: 1,
+                                                  style: GoogleFonts.poppins(
+                                                    fontSize: 30,
+                                                    color:
+                                                        CustomColors.textColor,
+                                                    fontWeight: FontWeight.w700,
+                                                  ),
+                                                ),
                                               ),
-                                              child: AutoSizeText(
-                                                data['foodCategory'].toString(),
+                                              const SizedBox(
+                                                height: 5,
+                                              ),
+                                              ConstrainedBox(
+                                                constraints:
+                                                    const BoxConstraints(
+                                                  maxHeight: 70.0,
+                                                  maxWidth: 140,
+                                                ),
+                                                child: AutoSizeText(
+                                                  data['allergens'],
+                                                  minFontSize: 10,
+                                                  maxFontSize: 25,
+                                                  style: GoogleFonts.poppins(
+                                                    color:
+                                                        CustomColors.textColor,
+                                                    fontWeight: FontWeight.w500,
+                                                  ),
+                                                ),
+                                              ),
+                                              const SizedBox(
+                                                height: 5,
+                                              ),
+                                              AutoSizeText(
+                                                data['ageNum'].toString() +
+                                                    ' ' +
+                                                    data['ageUnit'].toString(),
                                                 maxLines: 1,
                                                 style: GoogleFonts.poppins(
                                                   color: CustomColors.textColor,
-                                                  fontSize: 25,
-                                                  fontWeight: FontWeight.w700,
+                                                  fontSize: 15,
+                                                  fontWeight: FontWeight.w400,
                                                 ),
                                               ),
-                                            ),
-                                            const SizedBox(
-                                              height: 5,
-                                            ),
-                                            ConstrainedBox(
-                                              constraints: const BoxConstraints(
-                                                maxHeight: 70.0,
-                                                maxWidth: 140,
+                                              const SizedBox(
+                                                height: 5,
                                               ),
-                                              child: AutoSizeText(
-                                                data['allergens'],
-                                                minFontSize: 10,
-                                                maxFontSize: 25,
-                                                style: GoogleFonts.poppins(
-                                                  color: CustomColors.textColor,
-                                                  fontWeight: FontWeight.w500,
-                                                ),
-                                              ),
-                                            ),
-                                            const SizedBox(
-                                              height: 5,
-                                            ),
-                                            AutoSizeText(
-                                              data['ageNum'].toString() +
-                                                  ' ' +
-                                                  data['ageUnit'].toString(),
-                                              maxLines: 1,
-                                              style: GoogleFonts.poppins(
-                                                color: CustomColors.textColor,
-                                                fontSize: 15,
-                                                fontWeight: FontWeight.w400,
-                                              ),
-                                            ),
-                                          ],
+                                            ],
+                                          ),
                                         ),
                                       ],
                                     ),

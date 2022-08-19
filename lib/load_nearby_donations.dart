@@ -72,7 +72,7 @@ class _NearbyDonationsState extends State<NearbyDonations> {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.only(left: 30, right: 30),
+            padding: const EdgeInsets.only(left: 30, right: 30, top: 20),
             child: StreamBuilder(
               stream: stream,
               builder: (BuildContext context,
@@ -132,87 +132,159 @@ class _NearbyDonationsState extends State<NearbyDonations> {
                                 ),
                               );
                             },
-                            child: Container(
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(40),
-                                color: CustomColors.secondary,
-                                border: Border.all(
-                                  width: 1,
-                                  color: CustomColors.textColor,
+                            child: Stack(
+                              alignment: Alignment.center,
+                              children: [
+                                Align(
+                                  alignment: Alignment.topRight,
+                                  child: Container(
+                                    width: MediaQuery.of(context).size.width *
+                                        0.65,
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(40),
+                                      color: CustomColors.secondary,
+                                      border: Border.all(
+                                        color: CustomColors.textColor,
+                                      ),
+                                    ),
+                                    child: Padding(
+                                      padding: const EdgeInsets.only(
+                                        right: 20,
+                                        top: 15,
+                                        bottom: 15,
+                                      ),
+                                      child: Container(
+                                        width:
+                                            MediaQuery.of(context).size.width *
+                                                0.65,
+                                        child: Column(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.end,
+                                          children: [
+                                            AutoSizeText(
+                                              data['foodCategory'].toString(),
+                                              maxLines: 1,
+                                              style: GoogleFonts.poppins(
+                                                fontSize: 25,
+                                                color: CustomColors.textColor,
+                                                fontWeight: FontWeight.w700,
+                                              ),
+                                            ),
+                                            const SizedBox(
+                                              height: 5,
+                                            ),
+                                            data["allergensList"] == null
+                                                ? Container()
+                                                : SizedBox(
+                                                    width:
+                                                        MediaQuery.of(context)
+                                                                .size
+                                                                .width *
+                                                            0.4,
+                                                    child: Wrap(
+                                                      crossAxisAlignment:
+                                                          WrapCrossAlignment
+                                                              .end,
+                                                      alignment:
+                                                          WrapAlignment.end,
+                                                      runAlignment:
+                                                          WrapAlignment.end,
+                                                      children: [
+                                                        for (var name in data[
+                                                            "allergensList"])
+                                                          Padding(
+                                                            padding:
+                                                                const EdgeInsets
+                                                                    .only(
+                                                              left: 4,
+                                                              bottom: 4,
+                                                            ),
+                                                            child: FittedBox(
+                                                              fit: BoxFit
+                                                                  .fitWidth,
+                                                              child: Container(
+                                                                decoration:
+                                                                    BoxDecoration(
+                                                                  borderRadius:
+                                                                      BorderRadius
+                                                                          .circular(
+                                                                    300,
+                                                                  ),
+                                                                  color: CustomColors
+                                                                      .primary,
+                                                                ),
+                                                                child: Padding(
+                                                                  padding: const EdgeInsets
+                                                                          .only(
+                                                                      left: 8,
+                                                                      right: 8,
+                                                                      top: 5,
+                                                                      bottom:
+                                                                          5),
+                                                                  child: Center(
+                                                                    child: Text(
+                                                                      name,
+                                                                      style: GoogleFonts
+                                                                          .poppins(
+                                                                        color: Colors
+                                                                            .white,
+                                                                        fontSize:
+                                                                            8,
+                                                                      ),
+                                                                    ),
+                                                                  ),
+                                                                ),
+                                                              ),
+                                                            ),
+                                                          )
+                                                      ],
+                                                    ),
+                                                  ),
+                                            const SizedBox(
+                                              height: 5,
+                                            ),
+                                            AutoSizeText(
+                                              data['ageNum'].toString() +
+                                                  ' ' +
+                                                  data['ageUnit'].toString(),
+                                              maxLines: 1,
+                                              style: GoogleFonts.poppins(
+                                                color: CustomColors.textColor,
+                                                fontSize: 15,
+                                                fontWeight: FontWeight.w400,
+                                              ),
+                                            ),
+                                            const SizedBox(
+                                              height: 5,
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                    ),
+                                  ),
                                 ),
-                              ),
-                              child: Row(
-                                children: [
-                                  Padding(
+                                Align(
+                                  alignment: Alignment.bottomLeft,
+                                  child: Padding(
                                     padding: const EdgeInsets.only(right: 15),
                                     child: ClipRRect(
                                       borderRadius: BorderRadius.circular(40.0),
                                       child: Image.network(
                                         data['downloadUrl'],
                                         fit: BoxFit.cover,
-                                        width: 150,
-                                        height: 150,
+                                        width:
+                                            MediaQuery.of(context).size.width *
+                                                0.35,
+                                        height:
+                                            MediaQuery.of(context).size.width *
+                                                0.35,
                                       ),
                                     ),
                                   ),
-                                  Column(
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      ConstrainedBox(
-                                        constraints: const BoxConstraints(
-                                          maxWidth: 140,
-                                        ),
-                                        child: AutoSizeText(
-                                          data['foodCategory'].toString(),
-                                          maxLines: 1,
-                                          style: GoogleFonts.poppins(
-                                            color: CustomColors.textColor,
-                                            fontSize: 25,
-                                            fontWeight: FontWeight.w700,
-                                          ),
-                                        ),
-                                      ),
-                                      const SizedBox(
-                                        height: 5,
-                                      ),
-                                      ConstrainedBox(
-                                        constraints: const BoxConstraints(
-                                          maxHeight: 70.0,
-                                          maxWidth: 140,
-                                        ),
-                                        child: AutoSizeText(
-                                          data['allergens'],
-                                          minFontSize: 10,
-                                          maxFontSize: 25,
-                                          style: GoogleFonts.poppins(
-                                            color: CustomColors.textColor,
-                                            fontWeight: FontWeight.w500,
-                                          ),
-                                        ),
-                                      ),
-                                      const SizedBox(
-                                        height: 5,
-                                      ),
-                                      AutoSizeText(
-                                        data['ageNum'].toString() +
-                                            ' ' +
-                                            data['ageUnit'].toString(),
-                                        maxLines: 1,
-                                        style: GoogleFonts.poppins(
-                                          color: CustomColors.textColor,
-                                          fontSize: 15,
-                                          fontWeight: FontWeight.w400,
-                                        ),
-                                      ),
-                                      const SizedBox(
-                                        height: 5,
-                                      ),
-                                    ],
-                                  ),
-                                ],
-                              ),
+                                ),
+                              ],
                             ),
                           ),
                         );
